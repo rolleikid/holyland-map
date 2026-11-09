@@ -796,6 +796,7 @@ a { color: var(--accent); }
 .detail h2 { margin: 0.2rem 0 0.25rem; font-size: 2rem; }
 .detail .region { margin: 0; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
 .detail .texts { margin: 0.5rem 0 1rem; font-style: italic; color: var(--accent); }
+.detail .texts a { color: var(--accent); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
 .back { background: none; border: 0; padding: 0; font: 600 0.9rem var(--sans); color: var(--accent); cursor: pointer; }
 
 .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin: 1rem 0; }
@@ -910,13 +911,15 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <p>Most archive photographs come from the G. Eric and Edith Matson Photograph Collection, Library of Congress, Prints &amp; Photographs Division. The Library records "No known restrictions on publication" for this collection. Other sources are credited individually.</p>
     <ol id="source-list" class="source-list"></ol>
     <h3>Own photographs</h3>
-    <p>All other photographs © the author, taken in Israel, the West Bank and Jordan.</p>
+    <p>All other photographs © Constantin Mihail Milea, 2012 to 2018. All rights reserved. Taken in Israel, the West Bank and Jordan.</p>
+    <h3>Biblical texts</h3>
+    <p>Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
     <h3>Map</h3>
     <p>Base maps © Esri and contributors (World Topographic Map, World Imagery). Built with Leaflet.</p>
   </section>
 
   <footer class="site-footer">
-    <p>University of Aberdeen. Exploring the Ancient "Holy Land" and its People.</p>
+    <p>© 2026 Constantin Mihail Milea. Exploring the Ancient "Holy Land" and its People.</p>
   </footer>
 
 <!-- Map library: Leaflet 1.9.4 (BSD licence) -->
@@ -956,7 +959,7 @@ const PLACES = [
     name: "The Western Wall",
     region: "Jerusalem",
     lat: 31.7767, lng: 35.2345,
-    texts: "Psalm 137:5–6; 1 Kings 8; Mark 13:1–2",
+    texts: [["Psalm 137:5–6", "heb", "Psalms.137.5-6"], ["1 Kings 8", "heb", "I_Kings.8"], ["Mark 13:1–2", "nt", "Mark 13:1-2"]],
     note: "A retaining wall of the platform Herod the Great built around the Second Temple from about 20 BCE. The Romans destroyed the Temple in 70 CE. The wall became the focus of Jewish prayer and lament for the lost sanctuary. Worshippers fold written prayers and push them into the cracks between the stones, a custom recorded since at least the eighteenth century. The notes are cleared twice a year and buried on the Mount of Olives. The archive photograph shows the narrow prayer alley of the Ottoman and Mandate periods. My photograph shows the same Herodian blocks today.",
     mine: { file: "western-wall-standing.jpg", caption: "A worshipper at the Western Wall, with prayer notes in the crack beside him, March 2016.",
       more: [
@@ -970,7 +973,7 @@ const PLACES = [
     name: "Prayer on the Mount of Olives",
     region: "Jerusalem",
     lat: 31.7780, lng: 35.2410,
-    texts: "Zechariah 14:4; Ezekiel 37:1–14; Daniel 12:2",
+    texts: [["Zechariah 14:4", "heb", "Zechariah.14.4"], ["Ezekiel 37:1–14", "heb", "Ezekiel.37.1-14"], ["Daniel 12:2", "heb", "Daniel.12.2"]],
     note: "The Jewish cemetery on the Mount of Olives has received burials for close to three thousand years. Zechariah places the feet of the Lord on this mountain on the day of judgement. Jewish tradition holds that the resurrection of the dead begins here. The small stones on the graves follow the Jewish custom of marking a visit. The archive portrait shows Jerusalem's Jewish community a century earlier.",
     mine: { file: "mount-of-olives-prayer.jpg", caption: "Reading and prayer among the graves, Mount of Olives, March 2016." },
     archive: { matpc: "06793", title: "Costumes and characters, etc. Jews of Jerusalem", date: "between 1898 and 1914", search: "Jews Jerusalem" }
@@ -980,7 +983,7 @@ const PLACES = [
     name: "The Kidron Valley",
     region: "Jerusalem",
     lat: 31.7759, lng: 35.2378,
-    texts: "2 Samuel 15:23; 2 Samuel 18:18; Joel 3:2, 12",
+    texts: [["2 Samuel 15:23", "heb", "II_Samuel.15.23"], ["2 Samuel 18:18", "heb", "II_Samuel.18.18"], ["Joel 4:2, 12 (Eng. 3:2, 12)", "heb", "Joel.4.2-12"]],
     note: "The valley between the Temple Mount and the Mount of Olives. David crossed it weeping as he fled from Absalom. Tradition links the rock-cut monument in the valley to Absalom, though archaeologists date it to the first century CE. Jewish tradition identifies the Kidron with Joel's 'Valley of Jehoshaphat', the place of final judgement. My photograph looks across the valley from the cemetery to the Old City.",
     mine: { file: "kidron-valley.jpg", caption: "The Old City from the Mount of Olives across the Kidron Valley, February 2012.",
       more: [
@@ -994,7 +997,7 @@ const PLACES = [
     name: "The Golden Gate (Gate of Mercy)",
     region: "Jerusalem",
     lat: 31.7789, lng: 35.2369,
-    texts: "Ezekiel 43:1–5; Ezekiel 44:1–3; Psalm 24:7–10",
+    texts: [["Ezekiel 43:1–5", "heb", "Ezekiel.43.1-5"], ["Ezekiel 44:1–3", "heb", "Ezekiel.44.1-3"], ["Psalm 24:7–10", "heb", "Psalms.24.7-10"]],
     note: "The only gate in the eastern wall that opened directly onto the Temple platform. Ezekiel sees the glory of the Lord enter the Temple from the east and the gate shut behind it. In Jewish tradition it is Sha'ar HaRachamim, the Gate of Mercy, through which the Messiah will come. The present gate dates from the early Islamic period and has stood sealed for centuries. A Muslim cemetery lies in front of it.",
     mine: { file: "golden-gate.jpg", caption: "The sealed Golden Gate in the eastern wall, March 2016.",
       more: [ { file: "golden-gate-wall.jpg", caption: "The eastern wall and the Golden Gate from the Mount of Olives, February 2012." } ] },
@@ -1005,7 +1008,7 @@ const PLACES = [
     name: "West Jerusalem, the new city",
     region: "Jerusalem",
     lat: 31.7857, lng: 35.2125,
-    texts: "Isaiah 2:2–4; Psalm 122; Jeremiah 31:38–40",
+    texts: [["Isaiah 2:2–4", "heb", "Isaiah.2.2-4"], ["Psalm 122", "heb", "Psalms.122"], ["Jeremiah 31:37–39 (Eng. 31:38–40)", "heb", "Jeremiah.31.37-39"]],
     note: "Jerusalem began to grow outside its Ottoman walls from the 1860s. New Jewish, Christian and Arab neighbourhoods followed. The archive photograph shows these new streets under the British Mandate. The contrast with the Old City shows a living city, and asks how the Jerusalem of scripture relates to an ordinary modern capital.",
     mine: { file: "west-jerusalem.jpg", caption: "Street sculpture outside a building in West Jerusalem, 2016." },
     archive: { matpc: "21001", title: "Newer Jer. [i.e., Jerusalem] streets", date: "between 1940 and 1946", creator: "Matson Photo Service, photographer", search: "Jaffa Road Jerusalem" }
@@ -1015,7 +1018,7 @@ const PLACES = [
     name: "Bethlehem",
     region: "Judea / West Bank",
     lat: 31.7054, lng: 35.2024,
-    texts: "Ruth 1–4; 1 Samuel 16; Micah 5:2",
+    texts: [["Ruth 1–4", "heb", "Ruth.1-4"], ["1 Samuel 16", "heb", "I_Samuel.16"], ["Micah 5:1 (Eng. 5:2)", "heb", "Micah.5.1"]],
     note: "The setting of the Book of Ruth and the home of David, the shepherd chosen as king. Micah's prophecy tied a future ruler to the town. The archive photograph shows the upper and lower town in the early twentieth century, still a small hill town among terraces and fields. My photograph shows Bethlehem today behind the concrete barrier.",
     mine: { file: "bethlehem.jpg", caption: "Bethlehem behind the separation barrier, 2016." },
     archive: { matpc: "09178", title: "Bethlehem--upper & lower", date: "between 1898 and 1946", search: "Bethlehem" }
@@ -1025,8 +1028,8 @@ const PLACES = [
     name: "Rachel's Tomb and the separation wall",
     region: "Judea / West Bank",
     lat: 31.7193, lng: 35.2021,
-    texts: "Genesis 35:16–20; Jeremiah 31:15; 1 Samuel 10:2",
-    note: "Genesis places Rachel's burial 'on the way to Ephrath, which is Bethlehem'. Jeremiah's image of Rachel weeping for her children made her tomb a place of lament. 1 Samuel 10:2 suggests a rival location in Benjamin. The archive shows a domed shrine beside an open road. Since 2005 the Israeli barrier encloses it, and the wall around Bethlehem now carries murals and graffiti. One mural paints Noah's dove with its olive leaf, the biblical sign that the flood was over (Genesis 8:11), with its feet in chains.",
+    texts: [["Genesis 35:16–20", "heb", "Genesis.35.16-20"], ["Jeremiah 31:14 (Eng. 31:15)", "heb", "Jeremiah.31.14"], ["1 Samuel 10:2", "heb", "I_Samuel.10.2"]],
+    note: "Genesis places Rachel's burial on the road to Ephrath, identified with Bethlehem. Jeremiah's image of Rachel weeping for her children made her tomb a place of lament. 1 Samuel 10:2 suggests a rival location in Benjamin. The archive shows a domed shrine beside an open road. Since 2005 the Israeli barrier encloses it, and the wall around Bethlehem now carries murals and graffiti. One mural paints Noah's dove with its olive leaf, the biblical sign that the flood was over (Genesis 8:11), with its feet in chains.",
     mine: { file: "rachels-tomb-wall.jpg", caption: "Mural on the separation wall, Bethlehem, 2016.",
       more: [ { file: "car-in-tree.jpg", caption: "A car in a tree near Bethlehem, on the road to Aida refugee camp, 2016." },
         { file: "wall-dove.jpg", caption: "A chained dove with an olive branch on the separation wall, Bethlehem, 2016." },
@@ -1039,7 +1042,7 @@ const PLACES = [
     name: "Hebron and the Cave of Machpelah",
     region: "Judea / West Bank",
     lat: 31.5247, lng: 35.1107,
-    texts: "Genesis 23; Genesis 49:29–32; 2 Samuel 2:1–4",
+    texts: [["Genesis 23", "heb", "Genesis.23"], ["Genesis 49:29–32", "heb", "Genesis.49.29-32"], ["2 Samuel 2:1–4", "heb", "II_Samuel.2.1-4"]],
     note: "Abraham bought the cave of Machpelah as a family tomb. Jewish, Christian and Muslim tradition holds that Abraham, Isaac, Jacob, Sarah, Rebekah and Leah rest there. David reigned from Hebron for seven years before Jerusalem. The great enclosure is Herodian. Today the building serves as both a synagogue and the Ibrahimi Mosque, and the old town is divided.",
     mine: { file: "hebron.jpg", caption: "Rooftops and water tanks, Hebron, February 2012." },
     archive: { matpc: "06763", title: "View of Hebron", date: "between 1898 and 1914", search: "Hebron Machpelah" }
@@ -1049,7 +1052,7 @@ const PLACES = [
     name: "Down the Kidron to the Dead Sea",
     region: "Judean Wilderness",
     lat: 31.7050, lng: 35.3310,
-    texts: "Ezekiel 47:1–12; Joel 3:18; 1 Samuel 24; Psalm 63",
+    texts: [["Ezekiel 47:1–12", "heb", "Ezekiel.47.1-12"], ["Joel 4:18 (Eng. 3:18)", "heb", "Joel.4.18"], ["1 Samuel 24", "heb", "I_Samuel.24"], ["Psalm 63", "heb", "Psalms.63"]],
     note: "East of Jerusalem the Kidron drops through the Judean Wilderness to the Dead Sea. Ezekiel sees a river flow from the Temple down this route and turn the Dead Sea fresh. The wilderness was also a refuge: David hid here from Saul. The monastery of Mar Saba clings to the Kidron gorge. The mountains of Moab rise beyond the sea.",
     mine: { file: "judean-wilderness.jpg", caption: "The Judean Wilderness and the Dead Sea, with the mountains of Moab beyond, 2016.",
       more: [
@@ -1064,7 +1067,7 @@ const PLACES = [
     name: "The Golan Heights",
     region: "Galilee and Golan",
     lat: 33.1283, lng: 35.7856,
-    texts: "Deuteronomy 4:43; Amos 4:1; Matthew 16:13–20",
+    texts: [["Deuteronomy 4:43", "heb", "Deuteronomy.4.43"], ["Amos 4:1", "heb", "Amos.4.1"], ["Matthew 16:13–20", "nt", "Matthew 16:13-20"]],
     note: "Golan in Bashan was one of the cities of refuge. Amos mocks the wealthy women of Samaria as 'cows of Bashan', the rich pastures of this plateau. At nearby Banias, Herod's son Philip founded Caesarea Philippi, where the Gospels set Peter's confession. The signpost on Mount Bental points to Jerusalem, Damascus and Baghdad: the road between empires that has crossed this land since antiquity.",
     mine: { file: "golan.jpg", caption: "Signpost on Mount Bental, Golan Heights, 2013.",
       more: [ { file: "golan-armour-cat.jpg", caption: "A cat on a disused armoured vehicle, Golan Heights, 2013." } ] },
@@ -1080,7 +1083,7 @@ const PLACES = [
     name: "Caesarea Maritima",
     region: "Coast",
     lat: 32.5000, lng: 34.8917,
-    texts: "Acts 10; Acts 23:23–26:32; Josephus, Antiquities 15.331–341",
+    texts: [["Acts 10", "nt", "Acts 10"], ["Acts 23:23–26:32", "nt", "Acts 23:23-26:32"], ["Josephus, Antiquities 15.331–341", null, null]],
     note: "Herod the Great built a city and an artificial harbour here and named it for Caesar Augustus. It became the seat of the Roman governors of Judea, and a stone found here in 1961 names Pontius Pilate. Acts sets the conversion of the centurion Cornelius here and Paul's two years in custody. The minaret and walls in my photograph come from the later Muslim and Crusader towns.",
     mine: { file: "caesarea.jpg", caption: "The harbour of Caesarea Maritima with the minaret and Crusader walls, 2018." },
     archive: { matpc: "03969", title: "Caesarea. (Kaisarieh). The castle and harbour from the north", date: "1938", search: "Caesarea" }
@@ -1090,8 +1093,8 @@ const PLACES = [
     name: "Mount Nebo",
     region: "Transjordan",
     lat: 31.7676, lng: 35.7253,
-    texts: "Numbers 21:20; Deuteronomy 32:48–52; Deuteronomy 34:1–8",
-    note: "From Nebo the Lord shows Moses the whole land, from Gilead to the western sea, and tells him he will not enter it. Moses dies in Moab and 'no one knows his burial place to this day'. The archive photographer used an infra-red telephoto lens to show what Moses was shown: Jerusalem and Bethlehem, seen from Moab. Every other pin on this map lies inside that view or beside it. The site makes a fitting frame for the project: the land as promise, seen from outside.",
+    texts: [["Numbers 21:20", "heb", "Numbers.21.20"], ["Deuteronomy 32:48–52", "heb", "Deuteronomy.32.48-52"], ["Deuteronomy 34:1–8", "heb", "Deuteronomy.34.1-8"]],
+    note: "From Nebo the Lord shows Moses the whole land, from Gilead to the western sea, and tells him he will not enter it. Moses dies in Moab, and Deuteronomy says no one knows his burial place. The archive photographer used an infra-red telephoto lens to show what Moses was shown: Jerusalem and Bethlehem, seen from Moab. Every other pin on this map lies inside that view or beside it. The site makes a fitting frame for the project: the land as promise, seen from outside.",
     mine: { file: "mount-nebo.jpg", caption: "The view west from Mount Nebo towards the Jordan Valley, 2018." },
     archive: { matpc: "02729", title: "Mount Nebo. \"Jebel Nebba\". The Promised Land from Nebo. Infra-red telephoto showing Jerusalem & Bethlehem", date: "approximately 1920 to 1933", search: "Nebo" }
   },
@@ -1100,7 +1103,7 @@ const PLACES = [
     name: "Rabbah of the Ammonites (Amman Citadel)",
     region: "Transjordan",
     lat: 31.9547, lng: 35.9343,
-    texts: "Deuteronomy 3:11; 2 Samuel 11:1; 2 Samuel 12:26–31; Amos 1:13–15",
+    texts: [["Deuteronomy 3:11", "heb", "Deuteronomy.3.11"], ["2 Samuel 11:1", "heb", "II_Samuel.11.1"], ["2 Samuel 12:26–31", "heb", "II_Samuel.12.26-31"], ["Amos 1:13–15", "heb", "Amos.1.13-15"]],
     note: "The Citadel hill was Rabbah, capital of the Ammonites, Israel's neighbours and frequent enemies. David's army besieged Rabbah while he stayed in Jerusalem with Bathsheba, and Uriah died at its walls. The Greeks renamed the city Philadelphia. The Roman Temple of Hercules and the Umayyad palace show the later layers.",
     mine: { file: "amman-citadel.jpg", caption: "Ruins on the Citadel above modern Amman, 2018.",
       more: [
@@ -1114,8 +1117,8 @@ const PLACES = [
     name: "Petra",
     region: "Transjordan",
     lat: 30.3285, lng: 35.4444,
-    texts: "Genesis 36; Numbers 20:14–21; Obadiah 1–4",
-    note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau. Edom refused Israel passage on the way from Egypt. Obadiah condemns those who 'live in the clefts of the rock'. The rock-cut city itself belongs to the Nabataeans, Arab traders who flourished from the fourth century BCE until Rome annexed them in 106 CE. The archive photograph shows a Bdul Bedouin mother and child at their cave home. The Bdul lived in Petra's rock-cut tombs and caves until 1985, when Jordan moved them to the new village of Umm Sayhoun as Petra became a World Heritage Site.",
+    texts: [["Genesis 36", "heb", "Genesis.36"], ["Numbers 20:14–21", "heb", "Numbers.20.14-21"], ["Obadiah 1:1–4", "heb", "Obadiah.1.1-4"]],
+    note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau. Edom refused Israel passage on the way from Egypt. Obadiah condemns Edom's pride in its homes among the clefts of the rock. The rock-cut city itself belongs to the Nabataeans, Arab traders who flourished from the fourth century BCE until Rome annexed them in 106 CE. The archive photograph shows a Bdul Bedouin mother and child at their cave home. The Bdul lived in Petra's rock-cut tombs and caves until 1985, when Jordan moved them to the new village of Umm Sayhoun as Petra became a World Heritage Site.",
     mine: { file: "petra.jpg", caption: "The Royal Tombs, Petra, 2018.",
       more: [
         { file: "petra-siq.jpg", caption: "The Siq, the narrow gorge into Petra, 2018." },
@@ -1128,7 +1131,7 @@ const PLACES = [
     name: "Wadi Rum",
     region: "Transjordan",
     lat: 29.5759, lng: 35.4196,
-    texts: "Exodus 16–17; Deuteronomy 8:2–4; Hosea 2:14",
+    texts: [["Exodus 16–17", "heb", "Exodus.16-17"], ["Deuteronomy 8:2–4", "heb", "Deuteronomy.8.2-4"], ["Hosea 2:16 (Eng. 2:14)", "heb", "Hosea.2.16"]],
     note: "Desert like Wadi Rum frames the wilderness theme of the Hebrew Bible: forty years of testing, dependence and covenant. Hosea imagines God leading Israel back into the desert to speak to her heart. The valley holds thousands of rock inscriptions and a Nabataean temple. Bedouin still live and herd here, a link to the nomadic memory of Israel's ancestors.",
     mine: { file: "wadi-rum.jpg", caption: "A Bedouin camel train in a sandstorm, Wadi Rum, 2018.",
       more: [ { file: "wadi-rum-haze.jpg", caption: "The mountains of Wadi Rum in haze, 2018." } ] },
@@ -1208,6 +1211,21 @@ const PLACES = [
   }
   lightbox.onclick = function () { lightbox.classList.remove("open"); };
   document.addEventListener("keydown", e => { if (e.key === "Escape") lightbox.classList.remove("open"); });
+
+  // Bible links: Hebrew Bible to JPS 1985 on Sefaria, New Testament to NRSV (Anglicised)
+  const JPS = "?ven=Tanakh:_The_Holy_Scriptures,_published_by_JPS&lang=bi";
+  function renderTexts(t) {
+    const pEl = el("p", { class: "texts" });
+    if (!Array.isArray(t)) { pEl.textContent = t; return pEl; }
+    t.forEach(function (r, i) {
+      if (i) pEl.appendChild(document.createTextNode("; "));
+      const label = r[0], kind = r[1], ref = r[2];
+      if (kind === "heb") pEl.appendChild(el("a", { href: "https://www.sefaria.org/" + ref + JPS, target: "_blank", rel: "noopener", text: label }));
+      else if (kind === "nt") pEl.appendChild(el("a", { href: "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(ref) + "&version=NRSVA", target: "_blank", rel: "noopener", text: label }));
+      else pEl.appendChild(document.createTextNode(label));
+    });
+    return pEl;
+  }
 
   // ---------- Map ----------
   const map = L.map("map", { zoomControl: true, scrollWheelZoom: true });
@@ -1330,7 +1348,7 @@ const PLACES = [
     const nowFig = el("figure", { class: "now" }, [
       el("span", { class: "label", text: "Now" }),
       imageWithFallback(["images/mine/" + (mine.file || p.id + ".jpg")], mine.caption || p.name, minePh),
-      el("figcaption", { text: mine.caption || "" })
+      el("figcaption", { text: (mine.caption || "") + " © C. M. Milea" })
     ]);
 
     const back = el("button", { type: "button", class: "back", text: "← All places" });
@@ -1340,13 +1358,13 @@ const PLACES = [
       back,
       el("p", { class: "region", text: p.region }),
       el("h2", { text: p.name }),
-      el("p", { class: "texts", text: p.texts }),
+      renderTexts(p.texts),
       el("div", { class: "pair" }, [thenFig, nowFig]),
       (mine.more && mine.more.length) ? el("div", { class: "more" }, mine.more.map(function (m) {
         const img = el("img", { src: "images/mine/" + m.file, alt: m.caption, loading: "lazy" });
         img.onclick = function () { openLightbox(img.src, m.caption); };
         img.onerror = function () { img.parentNode.remove(); };
-        return el("figure", null, [img, el("figcaption", { text: m.caption })]);
+        return el("figure", null, [img, el("figcaption", { text: m.caption + " © C. M. Milea" })]);
       })) : null,
       el("p", { class: "note", text: p.note })
     ]);
