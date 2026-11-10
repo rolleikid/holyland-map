@@ -875,7 +875,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <div>
       <p class="eyebrow">Exploring the Ancient "Holy Land" and its People</p>
       <h1>Then and Now</h1>
-      <p class="lede">Fifteen places in three layers: the ancient text, the archive photograph (1898 to 1946) and my own photograph today.</p>
+      <p class="lede">Seventeen places in three layers: the ancient text, the archive photograph (1898 to 1946) and my own photograph today.</p>
     </div>
     <nav class="header-links">
       <a href="#about">About</a>
@@ -902,7 +902,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <h2>About this project</h2>
     <p>This map pairs photographs from the American Colony Photo Department and the Matson Photo Service, held by the Library of Congress, with my own photographs taken on the same sites. Each place carries the biblical texts that give it meaning and a short note on its history.</p>
     <p>The modern state of Israel did not exist when the archive photographs were taken. The catalogue records use the place names of the late Ottoman and British Mandate periods, and this site keeps them in the citations.</p>
-    <p>Photographs of identifiable people appear with their consent or in public settings.</p>
+    <p>My photographs from 1999 are scans of colour prints from a film camera. Photographs of identifiable people appear with their consent or in public settings.</p>
   </section>
 
   <section id="sources" class="prose">
@@ -911,7 +911,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <p>Most archive photographs come from the G. Eric and Edith Matson Photograph Collection, Library of Congress, Prints &amp; Photographs Division. The Library records "No known restrictions on publication" for this collection. Other sources are credited individually.</p>
     <ol id="source-list" class="source-list"></ol>
     <h3>Own photographs</h3>
-    <p>All other photographs © Constantin Mihail Milea, 2012 to 2018. All rights reserved. Taken in Israel, the West Bank and Jordan.</p>
+    <p>All other photographs © Constantin Mihail Milea, 1999 to 2018. All rights reserved. Taken in Israel, the West Bank and Jordan.</p>
     <h3>Biblical texts</h3>
     <p>Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
     <h3>Map</h3>
@@ -964,7 +964,8 @@ const PLACES = [
     mine: { file: "western-wall-standing.jpg", caption: "A worshipper at the Western Wall, with prayer notes in the crack beside him, March 2016.",
       more: [
         { file: "western-wall-seated.jpg", caption: "A worshipper seated in prayer at the wall, March 2016." },
-        { file: "western-wall-dome.jpg", caption: "The Western Wall below the Dome of the Rock, March 2014." }
+        { file: "western-wall-dome.jpg", caption: "The Western Wall below the Dome of the Rock, March 2014." },
+        { file: "temple-mount-south.jpg", caption: "The southern wall of the Temple Mount below the al-Aqsa Mosque, May 1999." }
       ] },
     archive: { matpc: "00027", title: "Various views inside the city. Jews wailing place", date: "between 1900 and 1920", search: "Wailing Wall" }
   },
@@ -1063,6 +1064,22 @@ const PLACES = [
     archive: { matpc: "00998", title: "Road to Hebron, Mar Saba, etc. Mar Saba and Kedron [i.e., Kidron] Valley", date: "between 1900 and 1920", search: "Mar Saba" }
   },
   {
+    id: "masada",
+    name: "Masada",
+    region: "Judean Wilderness",
+    lat: 31.3156, lng: 35.3536,
+    texts: [["1 Samuel 24:23 (Eng. 24:22)", "heb", "I_Samuel.24.23"], ["Psalm 18:3 (Eng. 18:2)", "heb", "Psalms.18.3"], ["Ezekiel 37:1–14", "heb", "Ezekiel.37.1-14"], ["Josephus, Jewish War 7.252–406", null, null]],
+    note: "Herod the Great turned this isolated rock above the Dead Sea into a fortified palace in the first century BCE. Its name comes from the Hebrew metsudah, a stronghold: the word used for David's refuges in the wilderness and for God as a fortress in the Psalms. In the revolt against Rome, Jewish rebels held Masada until the Romans breached it in 73 or 74 CE. Josephus reports that the defenders chose death over capture, and archaeologists still debate how far his account can be taken literally. The rebels used a hall on the summit as a synagogue, the room in my main photograph. Fragments of Deuteronomy and Ezekiel, including the vision of the dry bones, were found buried beneath its floor. In the twentieth century Masada became a symbol of the modern state of Israel.",
+    mine: { file: "masada-synagogue.jpg", caption: "The synagogue on Masada, with its tiers of plastered benches, May 1999.",
+      more: [
+        { file: "masada-dead-sea.jpg", caption: "The Dead Sea and the mountains of Moab from the summit, May 1999." },
+        { file: "masada-casemate.jpg", caption: "Rooms built into the casemate wall on the summit, May 1999." },
+        { file: "masada-ruins.jpg", caption: "Ruins on the summit of Masada, May 1999." },
+        { file: "masada-flags.jpg", caption: "Flags below the cliffs of Masada, May 1999." }
+      ] },
+    archive: { matpc: "07361", title: "Around the Dead Sea (Bahr Lut). Ancient fortress of Masada (Sebbeh)", date: "between 1898 and 1914", search: "Masada" }
+  },
+  {
     id: "golan",
     name: "The Golan Heights",
     region: "Galilee and Golan",
@@ -1077,6 +1094,17 @@ const PLACES = [
       date: "approximately 1900 to 1920",
       search: "Banias"
     }
+  },
+  {
+    id: "capernaum",
+    name: "Capernaum",
+    region: "Galilee and Golan",
+    lat: 32.8807, lng: 35.5753,
+    texts: [["Isaiah 8:23–9:1 (Eng. 9:1–2)", "heb", "Isaiah.8.23-9.1"], ["Matthew 4:13–16", "nt", "Matthew 4:13-16"], ["Mark 1:21–28", "nt", "Mark 1:21-28"], ["Luke 7:1–5", "nt", "Luke 7:1-5"]],
+    note: "A fishing village on the north shore of the Sea of Galilee. Its Hebrew name, Kefar Nahum, means Nahum's village. The Gospels make it the base of Jesus' ministry in Galilee and place him teaching in its synagogue, and Matthew links his move here to Isaiah's prophecy about Galilee. The white limestone synagogue standing today dates from the late Roman or Byzantine period, but it rests on black basalt foundations that many scholars date to the first century. Its carvings mix Jewish and classical motifs: the scallop shell in my photograph, and a relief of a wheeled shrine, possibly the Ark of the Covenant, in the archive photograph. Basalt houses of the ancient village lie beside it.",
+    mine: { file: "capernaum-shell.jpg", caption: "A carved scallop-shell niche and capitals from the synagogue, Capernaum, 28 May 1999.",
+      more: [ { file: "capernaum-houses.jpg", caption: "Basalt houses of the ancient village under bougainvillea, Capernaum, May 1999." } ] },
+    archive: { matpc: "05184", title: "Northern views. Remarkable remains of the synagogue at Capernaum. Relief of structure on wheels, possibly the Ark of the Covenant", date: "approximately 1900 to 1920", search: "Capernaum" }
   },
   {
     id: "caesarea",

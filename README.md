@@ -30,12 +30,14 @@ To test on your own computer first, open `index.html` in a browser.
 | 7 Rachel's Tomb and the wall | rachels-tomb-wall.jpg |
 | 8 Hebron | hebron.jpg |
 | 9 Down the Kidron to the Dead Sea | judean-wilderness.jpg |
-| 10 The Golan Heights | golan.jpg |
-| 11 Caesarea Maritima | caesarea.jpg |
-| 12 Mount Nebo | mount-nebo.jpg |
-| 13 Rabbah (Amman Citadel) | amman-citadel.jpg |
-| 14 Petra | petra.jpg |
-| 15 Wadi Rum | wadi-rum.jpg |
+| 10 Masada | masada-synagogue.jpg |
+| 11 The Golan Heights | golan.jpg |
+| 12 Capernaum | capernaum-shell.jpg |
+| 13 Caesarea Maritima | caesarea.jpg |
+| 14 Mount Nebo | mount-nebo.jpg |
+| 15 Rabbah (Amman Citadel) | amman-citadel.jpg |
+| 16 Petra | petra.jpg |
+| 17 Wadi Rum | wadi-rum.jpg |
 
 Extra photos for a place go in the `more` list for that place. They appear as a small gallery under the main pair.
 
