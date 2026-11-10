@@ -1069,7 +1069,7 @@ const PLACES = [
     region: "Judean Wilderness",
     lat: 31.3156, lng: 35.3536,
     texts: [["1 Samuel 24:23 (Eng. 24:22)", "heb", "I_Samuel.24.23"], ["Psalm 18:3 (Eng. 18:2)", "heb", "Psalms.18.3"], ["Ezekiel 37:1–14", "heb", "Ezekiel.37.1-14"], ["Josephus, Jewish War 7.252–406", null, null]],
-    note: "Herod the Great turned this isolated rock above the Dead Sea into a fortified palace in the first century BCE. Its name comes from the Hebrew metsudah, a stronghold: the word used for David's refuges in the wilderness and for God as a fortress in the Psalms. In the revolt against Rome, Jewish rebels held Masada until the Romans breached it in 73 or 74 CE. Josephus reports that the defenders chose death over capture, and archaeologists still debate how far his account can be taken literally. The rebels used a hall on the summit as a synagogue, the room in my main photograph. Fragments of Deuteronomy and Ezekiel, including the vision of the dry bones, were found buried beneath its floor. In the twentieth century Masada became a symbol of the modern state of Israel.",
+    note: "Herod the Great turned this isolated rock above the Dead Sea into a fortified palace in the first century BCE. Its name comes from the Hebrew metsudah (מצודה), a stronghold: the word used for David's refuge near En-gedi (1 Samuel 24:23) and for God as \"my fortress\" (Psalm 18:3). In the revolt against Rome, Jewish rebels held Masada until the Romans breached it in 73 or 74 CE. Josephus reports that the defenders chose death over capture, and archaeologists still debate how far his account can be taken literally. The rebels used a hall on the summit as a synagogue, the room in my main photograph. Fragments of Deuteronomy and Ezekiel, including the vision of the dry bones, were found buried beneath its floor. In the twentieth century Masada became a symbol of the modern state of Israel.",
     mine: { file: "masada-synagogue.jpg", caption: "The synagogue on Masada, with its tiers of plastered benches, May 1999.",
       more: [
         { file: "masada-dead-sea.jpg", caption: "The Dead Sea and the mountains of Moab from the summit, May 1999." },
@@ -1241,7 +1241,7 @@ const PLACES = [
   document.addEventListener("keydown", e => { if (e.key === "Escape") lightbox.classList.remove("open"); });
 
   // Bible links: Hebrew Bible to JPS 1985 on Sefaria, New Testament to NRSV (Anglicised)
-  const JPS = "?ven=Tanakh:_The_Holy_Scriptures,_published_by_JPS&lang=bi";
+  const JPS = "?ven=english|Tanakh:_The_Holy_Scriptures,_published_by_JPS&lang=bi";
   function renderTexts(t) {
     const pEl = el("p", { class: "texts" });
     if (!Array.isArray(t)) { pEl.textContent = t; return pEl; }
