@@ -35,7 +35,7 @@ To test on your own computer first, open `index.html` in a browser.
 | 12 Capernaum | capernaum-shell.jpg |
 | 13 Caesarea Maritima | caesarea.jpg |
 | 14 Mount Nebo | mount-nebo.jpg |
-| 15 Rabbah (Amman Citadel) | amman-citadel.jpg |
+| 15 Rabbah (Amman Citadel) | amman-umayyad.jpg |
 | 16 Petra | petra.jpg |
 | 17 Wadi Rum | wadi-rum.jpg |
 
