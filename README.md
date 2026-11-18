@@ -25,7 +25,7 @@ To test on your own computer first, open `index.html` in a browser.
 | 2 Prayer on the Mount of Olives | mount-of-olives-prayer.jpg |
 | 3 The Kidron Valley | kidron-valley.jpg |
 | 4 The Golden Gate | golden-gate.jpg |
-| 5 West Jerusalem | west-jerusalem.jpg |
+| 5 West Jerusalem | west-jerusalem-synagogue.jpg |
 | 6 Bethlehem | bethlehem.jpg |
 | 7 Rachel's Tomb and the wall | rachels-tomb-wall.jpg |
 | 8 Hebron | hebron.jpg |
