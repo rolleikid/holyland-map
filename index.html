@@ -855,7 +855,18 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
   padding: 2.5rem 2rem 0;
 }
 .prose h2 { font-size: 2rem; border-bottom: 1px solid var(--line); padding-bottom: 0.4rem; }
-.source-list li { margin-bottom: 0.6rem; font-size: 0.92rem; }
+.bib-filters { display: flex; flex-wrap: wrap; gap: 6px; margin: 0.5rem 0 1rem; }
+.bib-filters button { font: 600 0.82rem var(--sans); padding: 0.35rem 0.75rem; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); color: var(--ink); cursor: pointer; }
+.bib-filters button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.bibliography { list-style: none; padding: 0; }
+.bibliography li { padding: 0.6rem 0.75rem; margin: 0 -0.75rem; border-radius: 6px; font-size: 0.92rem; transition: background 0.6s; scroll-margin-top: 1.5rem; }
+.bibliography li.flash { background: var(--accent-soft); }
+.bibliography .kind { display: inline-block; margin-right: 0.4rem; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.bibliography .cited-at { display: block; margin-top: 0.2rem; font-size: 0.8rem; color: var(--muted); }
+.bibliography .cited-at a { margin-right: 0.5rem; }
+.bibliography .empty { color: var(--muted); font-style: italic; }
+.cite-link { color: var(--accent); text-decoration: underline dotted; text-underline-offset: 2px; cursor: pointer; }
+.cite-missing { color: #b00020; font-weight: 600; cursor: help; }
 
 .site-footer { margin-top: 3rem; padding: 1.5rem 2rem; border-top: 1px solid var(--line); text-align: center; color: var(--muted); font-size: 0.85rem; }
 
@@ -907,13 +918,14 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 
   <section id="sources" class="prose">
     <h2>Sources</h2>
-    <h3>Archive photographs</h3>
-    <p>Most archive photographs come from the G. Eric and Edith Matson Photograph Collection, Library of Congress, Prints &amp; Photographs Division. The Library records "No known restrictions on publication" for this collection. Other sources are credited individually.</p>
-    <ol id="source-list" class="source-list"></ol>
+    <h3>Bibliography</h3>
+    <p>Click a citation in any note to jump to its source here. Under each source, "Cited at" links take you back to the places that use it. The archive photographs come from the G. Eric and Edith Matson Photograph Collection, Library of Congress, Prints &amp; Photographs Division, which records "No known restrictions on publication".</p>
+    <div id="bib-filters" class="bib-filters" aria-label="Filter the bibliography"></div>
+    <ol id="bibliography" class="bibliography"></ol>
     <h3>Own photographs</h3>
     <p>All other photographs © Constantin Mihail Milea, 1999 to 2018. All rights reserved. Taken in Israel, the West Bank and Jordan.</p>
     <h3>Biblical texts</h3>
-    <p>Hebrew Bible references use SBL Handbook of Style abbreviations. Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
+    <p>Bible references use SBL Handbook of Style abbreviations. Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
     <h3>Map</h3>
     <p>Base maps © Esri and contributors (World Topographic Map, World Imagery). Built with Leaflet.</p>
   </section>
@@ -1171,6 +1183,30 @@ const PLACES = [
 ];
 
 </script>
+<!-- ===== BIBLIOGRAPHY: ADD EACH SOURCE YOU CITE HERE ===== -->
+<script>
+/*
+  BIBLIOGRAPHY
+  ============
+  One entry per source. In a note, cite it as [[key, p. 112]], for example
+  [[Magness 2019, p. 112]]. Two sources in one bracket: [[Magness 2019, p. 112; Netzer 2006, p. 18]].
+  The key must match exactly. A citation with no matching entry shows in red on the site.
+
+  type: "ancient" or "modern". Archive photographs are added automatically from PLACES.
+  ref:  the full Harvard reference, exactly as in your report and spreadsheet.
+  link: online edition or library record (optional).
+
+  Example of a modern entry (copy, fill in, remove the // marks):
+  // { key: "Magness 2019", type: "modern", ref: "Magness, J. (2019) Masada: From Jewish Revolt to Modern Myth. Princeton: Princeton University Press.", link: "" },
+*/
+const ACCESSED = "18 November 2026";   // date you last checked the online sources
+const BIBLIO = [
+  { key: "JPS 1985", type: "ancient", ref: "Jewish Publication Society (1985) Tanakh: The Holy Scriptures. Philadelphia: Jewish Publication Society. Available at: https://www.sefaria.org/texts (Accessed: " + ACCESSED + ").", link: "https://www.sefaria.org/texts" },
+  { key: "NRSV 1995", type: "ancient", ref: "New Revised Standard Version Bible: Anglicised Edition (1995). Oxford: Oxford University Press. Available at: https://www.biblegateway.com (Accessed: " + ACCESSED + ").", link: "https://www.biblegateway.com/versions/New-Revised-Standard-Version-Anglicised-NRSVA-Bible/" },
+  { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1963", type: "ancient", ref: "Josephus (1963) Jewish Antiquities, Books 15-17. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 410. Cambridge, MA: Harvard University Press.", link: "" }
+];
+</script>
 <!-- Site logic -->
 <script>
 (function () {
@@ -1255,6 +1291,76 @@ const PLACES = [
       else if (kind === "nt") pEl.appendChild(el("a", { href: "https://www.biblegateway.com/passage/?search=" + encodeURIComponent(ref) + "&version=NRSVA", target: "_blank", rel: "noopener", text: label }));
       else pEl.appendChild(document.createTextNode(label));
     });
+    return pEl;
+  }
+
+  // ---------- Citations and bibliography ----------
+  function bibId(key) { return "bib-" + key.toLowerCase().replace(/[^a-z0-9]+/g, "-"); }
+  const BIB = {};
+  BIBLIO.forEach(function (b) { BIB[b.key] = b; });
+  // archive photographs become bibliography entries automatically
+  PLACES.forEach(function (p) {
+    const a = p.archive;
+    if (!a || !a.matpc) return;
+    const key = "LC matpc-" + a.matpc;
+    BIB[key] = { key: key, type: "archive",
+      ref: (a.creator || LOC_CREATOR).replace(", photographer", "") + " (" + a.date + ") " + a.title + " [Photograph]. Library of Congress, Prints & Photographs Division, LC-DIG-matpc-" + a.matpc + ". Available at: " + recordUrl(a.matpc) + " (Accessed: " + ACCESSED + ").",
+      link: recordUrl(a.matpc) };
+  });
+  // which places use which source
+  const USED = {};
+  function use(key, pid) { (USED[key] = USED[key] || new Set()).add(pid); }
+  function textKey(r) {
+    if (r[1] === "heb") return "JPS 1985";
+    if (r[1] === "nt") return "NRSV 1995";
+    if (/^Josephus, J\.W\./.test(r[0])) return "Josephus 1928";
+    if (/^Josephus, Ant\./.test(r[0])) return "Josephus 1963";
+    return null;
+  }
+  const CITE_RE = /\[\[([^\]]+)\]\]/g;
+  function splitCite(part) {
+    const m = part.trim().match(/^(.*?\d{4}[a-z]?)(.*)$/);
+    return m ? { key: m[1].trim(), rest: m[2] } : { key: part.trim(), rest: "" };
+  }
+  PLACES.forEach(function (p) {
+    if (Array.isArray(p.texts)) p.texts.forEach(function (r) { const k = textKey(r); if (k) use(k, p.id); });
+    if (p.archive && p.archive.matpc) use("LC matpc-" + p.archive.matpc, p.id);
+    (p.note.match(CITE_RE) || []).forEach(function (c) {
+      c.slice(2, -2).split(";").forEach(function (part) { use(splitCite(part).key, p.id); });
+    });
+  });
+
+  function goToBib(key) {
+    const li = document.getElementById(bibId(key));
+    if (!li) return;
+    showBibFilter("All");
+    li.scrollIntoView({ behavior: "smooth", block: "center" });
+    li.classList.add("flash");
+    setTimeout(function () { li.classList.remove("flash"); }, 1800);
+  }
+
+  function renderNote(text) {
+    const pEl = el("p", { class: "note" });
+    let last = 0, m;
+    CITE_RE.lastIndex = 0;
+    while ((m = CITE_RE.exec(text))) {
+      pEl.appendChild(document.createTextNode(text.slice(last, m.index)));
+      pEl.appendChild(document.createTextNode("("));
+      m[1].split(";").forEach(function (part, i) {
+        if (i) pEl.appendChild(document.createTextNode("; "));
+        const c = splitCite(part);
+        if (BIB[c.key]) {
+          const a = el("a", { class: "cite-link", href: "#" + bibId(c.key), text: c.key + c.rest });
+          a.onclick = function (e) { e.preventDefault(); goToBib(c.key); };
+          pEl.appendChild(a);
+        } else {
+          pEl.appendChild(el("span", { class: "cite-missing", title: "No bibliography entry with the key \"" + c.key + "\"", text: c.key + c.rest + " [not in bibliography]" }));
+        }
+      });
+      pEl.appendChild(document.createTextNode(")"));
+      last = m.index + m[0].length;
+    }
+    pEl.appendChild(document.createTextNode(text.slice(last)));
     return pEl;
   }
 
@@ -1397,7 +1503,7 @@ const PLACES = [
         img.onerror = function () { img.parentNode.remove(); };
         return el("figure", null, [img, el("figcaption", { text: m.caption + " © C. M. Milea" })]);
       })) : null,
-      el("p", { class: "note", text: p.note })
+      renderNote(p.note)
     ]);
 
     if (detailEl) detailEl.remove();
@@ -1426,16 +1532,40 @@ const PLACES = [
   const hash = location.hash.replace("#", "");
   if (hash && PLACES.some(p => p.id === hash)) show(hash);
 
-  // ---------- Sources list ----------
-  const srcList = document.getElementById("source-list");
-  PLACES.filter(p => p.archive && p.archive.file && !p.archive.matpc).forEach(function (p) {
-    const a = p.archive;
-    const link = a.url && a.url.indexOf("http") === 0 ? ' <a href="' + a.url + '" target="_blank" rel="noopener">' + a.url + "</a>" : "";
-    srcList.appendChild(el("li", { html: otherCitation(a).replace(/&/g, "&amp;") + link + " (" + p.name + ")" }));
+  // ---------- Bibliography ----------
+  const bibList = document.getElementById("bibliography");
+  const KINDS = { ancient: "Ancient source", modern: "Modern scholarship", archive: "Archive photograph" };
+  const entries = Object.keys(BIB).map(k => BIB[k]).sort(function (x, y) { return x.ref.localeCompare(y.ref); });
+  entries.forEach(function (b) {
+    const li = el("li", { id: bibId(b.key), "data-type": b.type });
+    li.appendChild(el("span", { class: "kind", text: KINDS[b.type] || b.type }));
+    li.appendChild(document.createTextNode(b.ref + " "));
+    if (b.link) li.appendChild(el("a", { href: b.link, target: "_blank", rel: "noopener", text: "Open" }));
+    const places = USED[b.key] ? Array.from(USED[b.key]) : [];
+    const cited = el("span", { class: "cited-at", text: places.length ? "Cited at: " : "Not yet cited on the site" });
+    places.forEach(function (pid) {
+      const p = PLACES.find(x => x.id === pid);
+      const a = el("a", { href: "#" + pid, text: p.name });
+      a.onclick = function (e) { e.preventDefault(); show(pid); document.querySelector(".layout").scrollIntoView({ behavior: "smooth" }); };
+      cited.appendChild(a);
+    });
+    li.appendChild(cited);
+    bibList.appendChild(li);
   });
-  PLACES.filter(p => p.archive && p.archive.matpc).forEach(function (p) {
-    srcList.appendChild(el("li", { html: citation(p.archive).replace(/&/g, "&amp;") + ' <a href="' + recordUrl(p.archive.matpc) + '" target="_blank" rel="noopener">' + recordUrl(p.archive.matpc) + "</a> (" + p.name + ")" }));
+  if (!entries.some(b => b.type === "modern")) bibList.appendChild(el("li", { class: "empty", "data-type": "modern", text: "Modern scholarship: no works cited yet." }));
+  const bibFilters = document.getElementById("bib-filters");
+  function showBibFilter(name) {
+    bibFilters.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.textContent === name ? "true" : "false"));
+    const t = { "All": null, "Ancient sources": "ancient", "Modern scholarship": "modern", "Archive photographs": "archive" }[name];
+    bibList.querySelectorAll("li").forEach(li => { li.hidden = !!t && li.getAttribute("data-type") !== t; });
+  }
+  ["All", "Ancient sources", "Modern scholarship", "Archive photographs"].forEach(function (n) {
+    const btn = el("button", { type: "button", text: n, "aria-pressed": n === "All" ? "true" : "false" });
+    btn.onclick = function () { showBibFilter(n); };
+    bibFilters.appendChild(btn);
   });
+  // warn in the console about citations without an entry
+  Object.keys(USED).forEach(function (k) { if (!BIB[k]) console.warn("Citation without bibliography entry:", k); });
 })();
 
 </script>

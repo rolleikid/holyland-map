@@ -61,3 +61,11 @@ Credit line required by the Library: Library of Congress, Prints & Photographs D
 ## Credits
 
 Map: Leaflet (BSD licence, included inside index.html). Base maps by Esri, no API key needed.
+
+## Citations and the bibliography
+
+1. Add each source once to the BIBLIOGRAPHY block in `index.html` (search for "BIBLIOGRAPHY: ADD EACH SOURCE"). Give it a key such as `Magness 2019`, its type (`ancient` or `modern`) and the full Harvard reference.
+2. In a note, cite it as `[[Magness 2019, p. 112]]`. Two sources: `[[Magness 2019, p. 112; Netzer 2006, p. 18]]`.
+3. The site shows the citation as a link to the entry. A citation whose key has no entry shows in red with "[not in bibliography]". Fix those before you submit.
+4. Bible and Josephus references on the texts line count as citations of the JPS, NRSV and Loeb entries automatically. Archive photographs are added to the bibliography automatically.
+5. Set `ACCESSED` at the top of the block to the date you last checked the online sources.
