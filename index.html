@@ -913,7 +913,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <h3>Own photographs</h3>
     <p>All other photographs © Constantin Mihail Milea, 1999 to 2018. All rights reserved. Taken in Israel, the West Bank and Jordan.</p>
     <h3>Biblical texts</h3>
-    <p>Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
+    <p>Hebrew Bible references use SBL Handbook of Style abbreviations. Hebrew Bible references follow the JPS Tanakh (1985), with its Hebrew verse numbering; English numbering is given in brackets where it differs. Links open the JPS translation on <a href="https://www.sefaria.org/texts" target="_blank" rel="noopener">Sefaria</a>. New Testament references link to the New Revised Standard Version (Anglicised) on Bible Gateway.</p>
     <h3>Map</h3>
     <p>Base maps © Esri and contributors (World Topographic Map, World Imagery). Built with Leaflet.</p>
   </section>
@@ -959,7 +959,7 @@ const PLACES = [
     name: "The Western Wall",
     region: "Jerusalem",
     lat: 31.7767, lng: 35.2345,
-    texts: [["Psalm 137:5–6", "heb", "Psalms.137.5-6"], ["1 Kings 8", "heb", "I_Kings.8"], ["Mark 13:1–2", "nt", "Mark 13:1-2"]],
+    texts: [["Ps 137:5–6", "heb", "Psalms.137.5-6"], ["1 Kgs 8", "heb", "I_Kings.8"], ["Mark 13:1–2", "nt", "Mark 13:1-2"]],
     note: "A retaining wall of the platform Herod the Great built around the Second Temple from about 20 BCE. The Romans destroyed the Temple in 70 CE. The wall became the focus of Jewish prayer and lament for the lost sanctuary. Worshippers fold written prayers and push them into the cracks between the stones, a custom recorded since at least the eighteenth century. The notes are cleared twice a year and buried on the Mount of Olives. The archive photograph shows the narrow prayer alley of the Ottoman and Mandate periods. My photograph shows the same Herodian blocks today.",
     mine: { file: "western-wall-standing.jpg", caption: "A worshipper at the Western Wall, with prayer notes in the crack beside him, March 2016.",
       more: [
@@ -974,7 +974,7 @@ const PLACES = [
     name: "Prayer on the Mount of Olives",
     region: "Jerusalem",
     lat: 31.7780, lng: 35.2410,
-    texts: [["2 Samuel 15:30", "heb", "II_Samuel.15.30"], ["Zechariah 14:4", "heb", "Zechariah.14.4"], ["Daniel 12:2", "heb", "Daniel.12.2"]],
+    texts: [["2 Sam 15:30", "heb", "II_Samuel.15.30"], ["Zech 14:4", "heb", "Zechariah.14.4"], ["Dan 12:2", "heb", "Daniel.12.2"]],
     note: "The Jewish cemetery on the Mount of Olives has received burials for close to three thousand years. David climbed this slope weeping, barefoot and with his head covered, as he fled from Absalom. Zechariah places the feet of the Lord on this mountain on the day of judgement. Jewish tradition holds that the resurrection of the dead begins here. The small stones on the graves follow the Jewish custom of marking a visit. The archive portrait shows Jerusalem's Jewish community a century earlier.",
     mine: { file: "mount-of-olives-prayer.jpg", caption: "Reading and prayer among the graves, Mount of Olives, March 2016." },
     archive: { matpc: "06793", title: "Costumes and characters, etc. Jews of Jerusalem", date: "between 1898 and 1914", search: "Jews Jerusalem" }
@@ -984,7 +984,7 @@ const PLACES = [
     name: "The Kidron Valley",
     region: "Jerusalem",
     lat: 31.7759, lng: 35.2378,
-    texts: [["2 Samuel 15:23", "heb", "II_Samuel.15.23"], ["2 Samuel 18:18", "heb", "II_Samuel.18.18"], ["Joel 4:2, 12 (Eng. 3:2, 12)", "heb", "Joel.4.2-12"]],
+    texts: [["2 Sam 15:23", "heb", "II_Samuel.15.23"], ["2 Sam 18:18", "heb", "II_Samuel.18.18"], ["Joel 4:2, 12 (Eng. 3:2, 12)", "heb", "Joel.4.2-12"]],
     note: "The valley between the Temple Mount and the Mount of Olives. David crossed it weeping as he fled from Absalom. Tradition links the rock-cut monument in the valley to Absalom, though archaeologists date it to the first century CE. Jewish tradition identifies the Kidron with Joel's 'Valley of Jehoshaphat', the place of final judgement. My photograph looks across the valley from the cemetery to the Old City.",
     mine: { file: "kidron-valley.jpg", caption: "The Old City from the Mount of Olives across the Kidron Valley, February 2012.",
       more: [
@@ -998,7 +998,7 @@ const PLACES = [
     name: "The Golden Gate (Gate of Mercy)",
     region: "Jerusalem",
     lat: 31.7789, lng: 35.2369,
-    texts: [["Ezekiel 43:1–5", "heb", "Ezekiel.43.1-5"], ["Ezekiel 44:1–3", "heb", "Ezekiel.44.1-3"]],
+    texts: [["Ezek 43:1–5", "heb", "Ezekiel.43.1-5"], ["Ezek 44:1–3", "heb", "Ezekiel.44.1-3"]],
     note: "The only gate in the eastern wall that opened directly onto the Temple platform. Ezekiel sees the glory of the Lord enter the Temple from the east and the gate shut behind it. In Jewish tradition it is Sha'ar HaRachamim, the Gate of Mercy, through which the Messiah will come. The present gate dates from the early Islamic period and has stood sealed for centuries. A Muslim cemetery lies in front of it.",
     mine: { file: "golden-gate.jpg", caption: "The sealed Golden Gate in the eastern wall, March 2016.",
       more: [ { file: "golden-gate-wall.jpg", caption: "The eastern wall and the Golden Gate from the Mount of Olives, February 2012." } ] },
@@ -1009,8 +1009,8 @@ const PLACES = [
     name: "West Jerusalem, the new city",
     region: "Jerusalem",
     lat: 31.7857, lng: 35.2125,
-    texts: [["Jeremiah 31:37–39 (Eng. 31:38–40)", "heb", "Jeremiah.31.37-39"], ["Proverbs 31:10–31", "heb", "Proverbs.31.10-31"], ["Genesis 49:13–16", "heb", "Genesis.49.13-16"], ["Exodus 28:15–21", "heb", "Exodus.28.15-21"], ["Isaiah 6:1–3", "heb", "Isaiah.6.1-3"]],
-    note: "Jerusalem began to grow outside its Ottoman walls from the 1860s, and new Jewish, Christian and Arab neighbourhoods followed. Jeremiah foresees the city rebuilt beyond its old lines, with a new boundary running out across the hills to the west. The synagogue in my main photograph belongs to the Sephardi community. Its tiled sign records that Jews from the Old City founded it in 5685, that is 1924 or 1925. Its doors carry emblems of the tribes of Israel, among them the high priest's breastplate, Zebulun's ship and Dan's scales. The panel beside them gives Eshet Chayil, the 'woman of valour' of Proverbs 31, sung at the Sabbath table on Friday night. On Jaffa Road, the former Barclays Bank is a Mandate building of the 1930s. Between 1948 and 1967 the armistice line dividing the city ran past it. Nearby, the YMCA tower was dedicated in 1933 as a meeting place for Jews, Christians and Muslims. A tall stone relief on the tower shows the six-winged seraph of Isaiah's vision in the Temple. The archive photograph shows the new streets in the last years of the Mandate.",
+    texts: [["Jer 31:37–39 (Eng. 31:38–40)", "heb", "Jeremiah.31.37-39"], ["Prov 31:10–31", "heb", "Proverbs.31.10-31"], ["Gen 49:13–16", "heb", "Genesis.49.13-16"], ["Exod 28:15–21", "heb", "Exodus.28.15-21"], ["Isa 6:1–3", "heb", "Isaiah.6.1-3"]],
+    note: "Jerusalem began to grow outside its Ottoman walls from the 1860s, and new Jewish, Christian and Arab neighbourhoods followed. Jeremiah foresees the city rebuilt beyond its old lines, with a new boundary running out across the hills to the west. The synagogue in my main photograph belongs to the Sephardi community. Its tiled sign records that Jews from the Old City founded it in 5685, that is 1924 or 1925. Its doors carry emblems of the tribes of Israel, among them the high priest's breastplate, Zebulun's ship and Dan's scales. The panel beside them gives Eshet Chayil, the 'woman of valour' of Prov 31, sung at the Sabbath table on Friday night. On Jaffa Road, the former Barclays Bank is a Mandate building of the 1930s. Between 1948 and 1967 the armistice line dividing the city ran past it. Nearby, the YMCA tower was dedicated in 1933 as a meeting place for Jews, Christians and Muslims. A tall stone relief on the tower shows the six-winged seraph of Isaiah's vision in the Temple. The archive photograph shows the new streets in the last years of the Mandate.",
     mine: { file: "west-jerusalem-synagogue.jpg", caption: "Doors of a Sephardi synagogue founded by Jews from the Old City, with the tribal emblems and Eshet Chayil, West Jerusalem, March 2018.",
       more: [
         { file: "west-jerusalem-barclays.jpg", caption: "The former Barclays Bank on Jaffa Road, a Mandate building, March 2018." },
@@ -1023,7 +1023,7 @@ const PLACES = [
     name: "Bethlehem",
     region: "Judea / West Bank",
     lat: 31.7054, lng: 35.2024,
-    texts: [["Ruth 1–4", "heb", "Ruth.1-4"], ["1 Samuel 16", "heb", "I_Samuel.16"], ["Micah 5:1 (Eng. 5:2)", "heb", "Micah.5.1"]],
+    texts: [["Ruth 1–4", "heb", "Ruth.1-4"], ["1 Sam 16", "heb", "I_Samuel.16"], ["Mic 5:1 (Eng. 5:2)", "heb", "Micah.5.1"]],
     note: "The setting of the Book of Ruth and the home of David, the shepherd chosen as king. Micah's prophecy tied a future ruler to the town. The archive photograph shows the upper and lower town in the early twentieth century, still a small hill town among terraces and fields. My photograph shows Bethlehem today behind the concrete barrier.",
     mine: { file: "bethlehem.jpg", caption: "Bethlehem behind the separation barrier, 2016." },
     archive: { matpc: "09178", title: "Bethlehem--upper & lower", date: "between 1898 and 1946", search: "Bethlehem" }
@@ -1033,7 +1033,7 @@ const PLACES = [
     name: "Rachel's Tomb and the separation wall",
     region: "Judea / West Bank",
     lat: 31.7193, lng: 35.2021,
-    texts: [["Genesis 35:16–20", "heb", "Genesis.35.16-20"], ["Jeremiah 31:14 (Eng. 31:15)", "heb", "Jeremiah.31.14"], ["1 Samuel 10:2", "heb", "I_Samuel.10.2"]],
+    texts: [["Gen 35:16–20", "heb", "Genesis.35.16-20"], ["Jer 31:14 (Eng. 31:15)", "heb", "Jeremiah.31.14"], ["1 Sam 10:2", "heb", "I_Samuel.10.2"]],
     note: "Genesis places Rachel's burial on the road to Ephrath, identified with Bethlehem. Jeremiah's image of Rachel weeping for her children made her tomb a place of lament. 1 Samuel 10:2 suggests a rival location in Benjamin. The archive shows a domed shrine beside an open road. Since 2005 the Israeli barrier encloses it, and the wall around Bethlehem now carries murals and graffiti. One mural paints Noah's dove with its olive leaf, the biblical sign that the flood was over (Genesis 8:11), with its feet in chains.",
     mine: { file: "rachels-tomb-wall.jpg", caption: "Mural on the separation wall, Bethlehem, 2016.",
       more: [ { file: "car-in-tree.jpg", caption: "A car in a tree near Bethlehem, on the road to Aida refugee camp, 2016." },
@@ -1047,7 +1047,7 @@ const PLACES = [
     name: "Hebron and the Cave of Machpelah",
     region: "Judea / West Bank",
     lat: 31.5247, lng: 35.1107,
-    texts: [["Genesis 23", "heb", "Genesis.23"], ["Genesis 49:29–32", "heb", "Genesis.49.29-32"], ["2 Samuel 2:1–4", "heb", "II_Samuel.2.1-4"]],
+    texts: [["Gen 23", "heb", "Genesis.23"], ["Gen 49:29–32", "heb", "Genesis.49.29-32"], ["2 Sam 2:1–4", "heb", "II_Samuel.2.1-4"]],
     note: "Abraham bought the cave of Machpelah as a family tomb. Jewish, Christian and Muslim tradition holds that Abraham, Isaac, Jacob, Sarah, Rebekah and Leah rest there. David reigned from Hebron for seven years before Jerusalem. The great enclosure is Herodian. Today the building serves as both a synagogue and the Ibrahimi Mosque, and the old town is divided.",
     mine: { file: "hebron.jpg", caption: "Rooftops and water tanks, Hebron, February 2012." },
     archive: { matpc: "06763", title: "View of Hebron", date: "between 1898 and 1914", search: "Hebron Machpelah" }
@@ -1057,7 +1057,7 @@ const PLACES = [
     name: "Down the Kidron to the Dead Sea",
     region: "Judean Wilderness",
     lat: 31.7050, lng: 35.3310,
-    texts: [["Ezekiel 47:1–12", "heb", "Ezekiel.47.1-12"], ["1 Samuel 24", "heb", "I_Samuel.24"], ["Psalm 63", "heb", "Psalms.63"]],
+    texts: [["Ezek 47:1–12", "heb", "Ezekiel.47.1-12"], ["1 Sam 24", "heb", "I_Samuel.24"], ["Ps 63", "heb", "Psalms.63"]],
     note: "East of Jerusalem the Kidron drops through the Judean Wilderness to the Dead Sea. Ezekiel sees a river flow from the Temple down this route and turn the Dead Sea fresh. The wilderness was also a refuge: David hid here from Saul. The monastery of Mar Saba clings to the Kidron gorge. The mountains of Moab rise beyond the sea.",
     mine: { file: "judean-wilderness.jpg", caption: "The Judean Wilderness and the Dead Sea, with the mountains of Moab beyond, 2016.",
       more: [
@@ -1072,8 +1072,8 @@ const PLACES = [
     name: "Masada",
     region: "Judean Wilderness",
     lat: 31.3156, lng: 35.3536,
-    texts: [["Deuteronomy 33–34", "heb", "Deuteronomy.33-34"], ["Ezekiel 37:1–14", "heb", "Ezekiel.37.1-14"], ["Josephus, Jewish War 7.252–406", null, null]],
-    note: "Herod the Great turned this isolated rock above the Dead Sea into a fortified palace in the first century BCE. Its name comes from the Hebrew metsudah, 'stronghold'. In the revolt against Rome, Jewish rebels held Masada until the Romans breached it in 73 or 74 CE. Josephus reports that the defenders chose death over capture, and archaeologists still debate how far his account can be taken literally. The rebels used a hall on the summit as a synagogue, the room in my main photograph. Excavators found scroll fragments buried beneath its floor: parts of Deuteronomy 33 and 34, the blessing of Moses and his death on Mount Nebo, and Ezekiel 35 to 38, including the vision of the dry bones. The defenders kept the same account of Moses looking over the land that frames the Mount Nebo pin on this map. In the twentieth century Masada became a symbol of the modern state of Israel.",
+    texts: [["Deut 33–34", "heb", "Deuteronomy.33-34"], ["Ezek 37:1–14", "heb", "Ezekiel.37.1-14"], ["Josephus, J.W. 7.252–406", null, null]],
+    note: "Herod the Great turned this isolated rock above the Dead Sea into a fortified palace in the first century BCE. Its name comes from the Hebrew metsudah, 'stronghold'. In the revolt against Rome, Jewish rebels held Masada until the Romans breached it in 73 or 74 CE. Josephus reports that the defenders chose death over capture, and archaeologists still debate how far his account can be taken literally. The rebels used a hall on the summit as a synagogue, the room in my main photograph. Excavators found scroll fragments buried beneath its floor: parts of Deut 33–34, the blessing of Moses and his death on Mount Nebo, and Ezek 35–38, including the vision of the dry bones. The defenders kept the same account of Moses looking over the land that frames the Mount Nebo pin on this map. In the twentieth century Masada became a symbol of the modern state of Israel.",
     mine: { file: "masada-synagogue.jpg", caption: "The synagogue on Masada, with its tiers of plastered benches, May 1999.",
       more: [
         { file: "masada-dead-sea.jpg", caption: "The Dead Sea and the mountains of Moab from the summit, May 1999." },
@@ -1088,7 +1088,7 @@ const PLACES = [
     name: "The Golan Heights",
     region: "Galilee and Golan",
     lat: 33.1283, lng: 35.7856,
-    texts: [["Deuteronomy 4:43", "heb", "Deuteronomy.4.43"], ["Amos 4:1", "heb", "Amos.4.1"], ["Matthew 16:13–20", "nt", "Matthew 16:13-20"]],
+    texts: [["Deut 4:43", "heb", "Deuteronomy.4.43"], ["Amos 4:1", "heb", "Amos.4.1"], ["Matt 16:13–20", "nt", "Matthew 16:13-20"]],
     note: "Golan in Bashan was one of the cities of refuge. Amos mocks the wealthy women of Samaria as 'cows of Bashan', the rich pastures of this plateau. At nearby Banias, Herod's son Philip founded Caesarea Philippi, where the Gospels set Peter's confession. The signpost on Mount Bental points to Jerusalem, Damascus and Baghdad: the road between empires that has crossed this land since antiquity.",
     mine: { file: "golan.jpg", caption: "Signpost on Mount Bental, Golan Heights, 2013.",
       more: [ { file: "golan-armour-cat.jpg", caption: "A cat on a disused armoured vehicle, Golan Heights, 2013." } ] },
@@ -1104,7 +1104,7 @@ const PLACES = [
     name: "Capernaum",
     region: "Galilee and Golan",
     lat: 32.8807, lng: 35.5753,
-    texts: [["Isaiah 8:23–9:1 (Eng. 9:1–2)", "heb", "Isaiah.8.23-9.1"], ["Matthew 4:13–16", "nt", "Matthew 4:13-16"], ["Mark 1:21–28", "nt", "Mark 1:21-28"], ["Luke 7:1–5", "nt", "Luke 7:1-5"]],
+    texts: [["Isa 8:23–9:1 (Eng. 9:1–2)", "heb", "Isaiah.8.23-9.1"], ["Matt 4:13–16", "nt", "Matthew 4:13-16"], ["Mark 1:21–28", "nt", "Mark 1:21-28"], ["Luke 7:1–5", "nt", "Luke 7:1-5"]],
     note: "A fishing village on the north shore of the Sea of Galilee. Its Hebrew name, Kefar Nahum, means Nahum's village. The Gospels make it the base of Jesus' ministry in Galilee and place him teaching in its synagogue, and Matthew links his move here to Isaiah's prophecy about Galilee. The white limestone synagogue standing today dates from the late Roman or Byzantine period, but it rests on black basalt foundations that many scholars date to the first century. Its carvings mix Jewish and classical motifs: the scallop shell in my photograph, and a relief of a wheeled shrine, possibly the Ark of the Covenant, in the archive photograph. Basalt houses of the ancient village lie beside it.",
     mine: { file: "capernaum-shell.jpg", caption: "A carved scallop-shell niche and capitals from the synagogue, Capernaum, 28 May 1999.",
       more: [ { file: "capernaum-houses.jpg", caption: "Basalt houses of the ancient village under bougainvillea, Capernaum, May 1999." } ] },
@@ -1115,7 +1115,7 @@ const PLACES = [
     name: "Caesarea Maritima",
     region: "Coast",
     lat: 32.5000, lng: 34.8917,
-    texts: [["Acts 10", "nt", "Acts 10"], ["Acts 23:23–26:32", "nt", "Acts 23:23-26:32"], ["Josephus, Antiquities 15.331–341", null, null]],
+    texts: [["Acts 10", "nt", "Acts 10"], ["Acts 23:23–26:32", "nt", "Acts 23:23-26:32"], ["Josephus, Ant. 15.331–341", null, null]],
     note: "Herod the Great built a city and an artificial harbour here and named it for Caesar Augustus. It became the seat of the Roman governors of Judea, and a stone found here in 1961 names Pontius Pilate. Acts sets the conversion of the centurion Cornelius here and Paul's two years in custody. The minaret and walls in my photograph come from the later Muslim and Crusader towns.",
     mine: { file: "caesarea.jpg", caption: "The harbour of Caesarea Maritima with the minaret and Crusader walls, 2018." },
     archive: { matpc: "03969", title: "Caesarea. (Kaisarieh). The castle and harbour from the north", date: "1938", search: "Caesarea" }
@@ -1125,7 +1125,7 @@ const PLACES = [
     name: "Mount Nebo",
     region: "Transjordan",
     lat: 31.7676, lng: 35.7253,
-    texts: [["Numbers 21:20", "heb", "Numbers.21.20"], ["Deuteronomy 32:48–52", "heb", "Deuteronomy.32.48-52"], ["Deuteronomy 34:1–8", "heb", "Deuteronomy.34.1-8"]],
+    texts: [["Num 21:20", "heb", "Numbers.21.20"], ["Deut 32:48–52", "heb", "Deuteronomy.32.48-52"], ["Deut 34:1–8", "heb", "Deuteronomy.34.1-8"]],
     note: "From Nebo the Lord shows Moses the whole land, from Gilead to the western sea, and tells him he will not enter it. Moses dies in Moab, and Deuteronomy says no one knows his burial place. The archive photographer used an infra-red telephoto lens to show what Moses was shown: Jerusalem and Bethlehem, seen from Moab. Every other pin on this map lies inside that view or beside it. The site makes a fitting frame for the project: the land as promise, seen from outside.",
     mine: { file: "mount-nebo.jpg", caption: "The view west from Mount Nebo towards the Jordan Valley, 2018." },
     archive: { matpc: "02729", title: "Mount Nebo. \"Jebel Nebba\". The Promised Land from Nebo. Infra-red telephoto showing Jerusalem & Bethlehem", date: "approximately 1920 to 1933", search: "Nebo" }
@@ -1135,7 +1135,7 @@ const PLACES = [
     name: "Rabbah of the Ammonites (Amman Citadel)",
     region: "Transjordan",
     lat: 31.9547, lng: 35.9343,
-    texts: [["Deuteronomy 3:11", "heb", "Deuteronomy.3.11"], ["2 Samuel 11:1", "heb", "II_Samuel.11.1"], ["2 Samuel 12:26–31", "heb", "II_Samuel.12.26-31"], ["Amos 1:13–15", "heb", "Amos.1.13-15"]],
+    texts: [["Deut 3:11", "heb", "Deuteronomy.3.11"], ["2 Sam 11:1", "heb", "II_Samuel.11.1"], ["2 Sam 12:26–31", "heb", "II_Samuel.12.26-31"], ["Amos 1:13–15", "heb", "Amos.1.13-15"]],
     note: "The Citadel hill was Rabbah, capital of the Ammonites, Israel's neighbours and frequent enemies. David's army besieged Rabbah while he stayed in Jerusalem with Bathsheba, and Uriah died at its walls. The Greeks renamed the city Philadelphia. The Roman Temple of Hercules and the Umayyad palace show the later layers.",
     mine: { file: "amman-citadel.jpg", caption: "Ruins on the Citadel above modern Amman, 2018.",
       more: [
@@ -1149,7 +1149,7 @@ const PLACES = [
     name: "Petra",
     region: "Transjordan",
     lat: 30.3285, lng: 35.4444,
-    texts: [["Genesis 36", "heb", "Genesis.36"], ["Numbers 20:14–21", "heb", "Numbers.20.14-21"], ["Obadiah 1:1–4", "heb", "Obadiah.1.1-4"]],
+    texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Obad 1–4", "heb", "Obadiah.1.1-4"]],
     note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau. Edom refused Israel passage on the way from Egypt. Obadiah condemns Edom's pride in its homes among the clefts of the rock. The rock-cut city itself belongs to the Nabataeans, Arab traders who flourished from the fourth century BCE until Rome annexed them in 106 CE. The archive photograph shows a Bdul Bedouin mother and child at their cave home. The Bdul lived in Petra's rock-cut tombs and caves until 1985, when Jordan moved them to the new village of Umm Sayhoun as Petra became a World Heritage Site.",
     mine: { file: "petra.jpg", caption: "The Royal Tombs, Petra, 2018.",
       more: [
@@ -1163,7 +1163,7 @@ const PLACES = [
     name: "Wadi Rum",
     region: "Transjordan",
     lat: 29.5759, lng: 35.4196,
-    texts: [["Exodus 16–17", "heb", "Exodus.16-17"], ["Deuteronomy 8:2–4", "heb", "Deuteronomy.8.2-4"], ["Hosea 2:16 (Eng. 2:14)", "heb", "Hosea.2.16"]],
+    texts: [["Exod 16–17", "heb", "Exodus.16-17"], ["Deut 8:2–4", "heb", "Deuteronomy.8.2-4"], ["Hos 2:16 (Eng. 2:14)", "heb", "Hosea.2.16"]],
     note: "Desert like Wadi Rum frames the wilderness theme of the Hebrew Bible: forty years of testing, dependence and covenant. Hosea imagines God leading Israel back into the desert to speak to her heart. The valley holds thousands of rock inscriptions and a Nabataean temple. Bedouin still live and herd here, a link to the nomadic memory of Israel's ancestors.",
     mine: { file: "wadi-rum.jpg", caption: "A Bedouin camel train in a sandstorm, Wadi Rum, 2018.",
       more: [ { file: "wadi-rum-haze.jpg", caption: "The mountains of Wadi Rum in haze, 2018." } ] },
