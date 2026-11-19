@@ -1160,8 +1160,8 @@ const PLACES = [
     name: "Petra",
     region: "Transjordan",
     lat: 30.3285, lng: 35.4444,
-    texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Obad 1–4", "heb", "Obadiah.1.1-4"]],
-    note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau. Edom refused Israel passage on the way from Egypt. Obadiah condemns Edom's pride in its homes among the clefts of the rock. The rock-cut city itself belongs to the Nabataeans, Arab traders who flourished from the fourth century BCE until Rome annexed them in 106 CE. The archive photograph shows a Bdul Bedouin mother and child at their cave home. The Bdul lived in Petra's rock-cut tombs and caves until 1985, when Jordan moved them to the new village of Umm Sayhoun as Petra became a World Heritage Site.",
+    texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Obad 1–4", "heb", "Obadiah.1.1-4"], ["2 Macc 5:8", "nt", "2 Maccabees 5:8"]],
+    note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau [[Tholbecq 2025, p. 816]]. Edom refused Israel passage on the way from Egypt, and Obadiah condemns Edom's pride in its homes among the clefts of the rock. The Greek word petra simply means rock. Diodorus Siculus describes a place called the Rock in connection with the Nabataeans. He recounts how Antigonus I Monophthalmus tried to subdue them in 312 to 311 BCE with two expeditions, the second led by his son Demetrius. The Nabataeans took refuge on a natural fortress, the Rock, reached by a single difficult approach [[Diodorus Siculus 1954 | Diodorus Siculus, Bib. hist. 19.97.1]]. On leaving it, Demetrius marched three hundred stades, about 58 km, and camped near the Dead Sea [[Diodorus Siculus 1954 | Diodorus Siculus, Bib. hist. 19.98.1]]. Petra lies about 104 km from the Dead Sea, so the Rock may instead be Es-Sela, another Edomite stronghold whose name also means rock [[Wheatley 2020, p. 160 n. 26; Tholbecq 2025, p. 814]]. By 168 BCE Petra was the seat of Nabataean power (2 Macc 5:8), and in 129 BCE an inscription from Priene records an embassy to a king in Petra [[Tholbecq 2025, p. 817]]. Strabo calls Petra the metropolis of the Nabataeans [[Strabo 1930 | Strabo, Geogr. 16.4.21]]. Their kingdom lasted until Rome annexed it in 106 CE [[Tholbecq 2025, p. 813]]. The archive photograph shows a Bedul mother and child at their cave home. The Bedul lived in Petra's Nabataean caves for about 150 years. In 1985 most of the tribe was moved to the new village of Umm Saihun, as Petra was reorganised for tourism [[Bienkowski 1989, p. 335]].",
     mine: { file: "petra.jpg", caption: "The Royal Tombs, Petra, 2018.",
       more: [
         { file: "petra-siq.jpg", caption: "The Siq, the narrow gorge into Petra, 2018." },
@@ -1205,6 +1205,10 @@ const BIBLIO = [
   { key: "NRSV 1995", type: "ancient", ref: "New Revised Standard Version Bible: Anglicised Edition (1995). Oxford: Oxford University Press. Available at: https://www.biblegateway.com (Accessed: " + ACCESSED + ").", link: "https://www.biblegateway.com/versions/New-Revised-Standard-Version-Anglicised-NRSVA-Bible/" },
   { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1963", type: "ancient", ref: "Josephus (1963) Jewish Antiquities, Books 15-17. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 410. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Diodorus Siculus 1954", type: "ancient", ref: "Diodorus Siculus (1954) Library of History, Volume X: Books 19.66-20. Translated by R.M. Geer. Loeb Classical Library 390. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Strabo 1930", type: "ancient", ref: "Strabo (1930) Geography, Volume VII: Books 15-16. Translated by H.L. Jones. Loeb Classical Library 241. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Bienkowski 1989", type: "modern", ref: "Bienkowski, P. (1989) 'Architecture of the Petra Beduin: a preliminary report', Annual of the Department of Antiquities of Jordan, 33, pp. 335-343.", link: "" },
+  { key: "Wheatley 2020", type: "modern", ref: "Wheatley, P. (2020) 'The implications of \u2018Poliorcetes\u2019: was Demetrius the Besieger\u2019s nickname ironic?', Histos, 14, pp. 152-184.", link: "" },
   { key: "Tholbecq 2025", type: "modern", ref: "Tholbecq, L. (2025) 'Petra during the Nabataean, Roman, and Byzantine Periods', in Raja, R. (ed.) The Oxford Handbook of the Hellenistic and Roman Near East. Oxford: Oxford University Press, pp. 813-828. Available at: https://doi.org/10.1093/oxfordhb/9780190858155.013.53 (Accessed: " + ACCESSED + ").", link: "https://doi.org/10.1093/oxfordhb/9780190858155.013.53" }
 ];
 </script>
@@ -1320,6 +1324,8 @@ const BIBLIO = [
   }
   const CITE_RE = /\[\[([^\]]+)\]\]/g;
   function splitCite(part) {
+    const bar = part.indexOf("|");
+    if (bar >= 0) return { key: part.slice(0, bar).trim(), rest: "", label: part.slice(bar + 1).trim() };
     const m = part.trim().match(/^(.*?\d{4}[a-z]?)(.*)$/);
     return m ? { key: m[1].trim(), rest: m[2] } : { key: part.trim(), rest: "" };
   }
@@ -1351,11 +1357,11 @@ const BIBLIO = [
         if (i) pEl.appendChild(document.createTextNode("; "));
         const c = splitCite(part);
         if (BIB[c.key]) {
-          const a = el("a", { class: "cite-link", href: "#" + bibId(c.key), text: c.key + c.rest });
+          const a = el("a", { class: "cite-link", href: "#" + bibId(c.key), text: c.label || (c.key + c.rest) });
           a.onclick = function (e) { e.preventDefault(); goToBib(c.key); };
           pEl.appendChild(a);
         } else {
-          pEl.appendChild(el("span", { class: "cite-missing", title: "No bibliography entry with the key \"" + c.key + "\"", text: c.key + c.rest + " [not in bibliography]" }));
+          pEl.appendChild(el("span", { class: "cite-missing", title: "No bibliography entry with the key \"" + c.key + "\"", text: (c.label || (c.key + c.rest)) + " [not in bibliography]" }));
         }
       });
       pEl.appendChild(document.createTextNode(")"));
