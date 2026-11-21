@@ -836,6 +836,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 .sections h3 { font-size: 1.05rem; margin: 1.2em 0 0.3em; }
 .sections h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0.9em 0 0.3em; }
 .sections ul.further { padding-left: 1.1em; margin: 0; }
+.ext-link { text-decoration: none; font-weight: 600; }
 .sections ul.further li { margin-bottom: 0.5em; font-size: 0.95rem; }
 .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 0 0 1rem; }
 .more figure { margin: 0; }
@@ -890,7 +891,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
     <div>
       <p class="eyebrow">Exploring the Ancient "Holy Land" and its People</p>
       <h1>Then and Now</h1>
-      <p class="lede">Seventeen places in three layers: the ancient text, the archive photograph (1898 to 1946) and my own photograph today.</p>
+      <p class="lede">The geography of Josephus in seventeen places: his account, the archive photograph (1898 to 1946) and my own photograph today.</p>
     </div>
     <nav class="header-links">
       <a href="#about">About</a>
@@ -906,6 +907,7 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 
     <aside id="panel" class="panel" aria-live="polite">
       <div class="panel-empty">
+        <div id="intro" class="sections"></div>
         <h2>Choose a place</h2>
         <p>Click a pin on the map or a name below.</p>
       </div>
@@ -976,7 +978,9 @@ const PLACES = [
     region: "Jerusalem",
     lat: 31.7767, lng: 35.2345,
     texts: [["Ps 137:5–6", "heb", "Psalms.137.5-6"], ["1 Kgs 8", "heb", "I_Kings.8"], ["Mark 13:1–2", "nt", "Mark 13:1-2"]],
-    note: "A retaining wall of the platform Herod the Great built around the Second Temple from about 20 BCE. The Romans destroyed the Temple in 70 CE. The wall became the focus of Jewish prayer and lament for the lost sanctuary. Worshippers fold written prayers and push them into the cracks between the stones, a custom recorded since at least the eighteenth century. The notes are cleared twice a year and buried on the Mount of Olives. The archive photograph shows the narrow prayer alley of the Ottoman and Mandate periods. My photograph shows the same Herodian blocks today.",
+    intro: "The Western Wall is part of the retaining wall Herod built around the enlarged platform of the Second Temple.",
+    josephus: "In the eighteenth year of his reign, Herod resolved to rebuild the Temple and enlarge its precincts [[Josephus 1943 | Josephus, Ant. 15.380 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.441.xml]]. He gathered a thousand wagons for the stones and ten thousand skilled workmen. He bought robes for a thousand priests and trained some as masons and others as carpenters [[Josephus 1943 | Josephus, Ant. 15.390 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.445.xml]].",
+    images: "My photographs show worshippers at the wall in 2016. The archive photograph, from between 1900 and 1920, shows the same stones when the site was a narrow alley known as the Jews' wailing place.",
     mine: { file: "western-wall-standing.jpg", caption: "A worshipper at the Western Wall, with prayer notes in the crack beside him, March 2016.",
       more: [
         { file: "western-wall-seated.jpg", caption: "A worshipper seated in prayer at the wall, March 2016." },
@@ -1166,7 +1170,7 @@ const PLACES = [
     lat: 30.3285, lng: 35.4444,
     texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Num 31:8", "heb", "Numbers.31.8"], ["Obad 1–4", "heb", "Obadiah.1.1-4"], ["2 Macc 5:8", "nt", "2 Maccabees 5:8"]],
     intro: "Petra, in the territory of ancient Edom, was the Nabataean capital until Rome annexed it in 106 CE [[Tholbecq 2025, pp. 813, 816]].",
-    josephus: "Josephus says Petra was once called Arce, and that Aaron died on a mountain beside it [[Josephus 1930 | Josephus, Ant. 4.82–83]]. He calls it the chief city of Arabia, named Rekem after a Midianite king killed by Israel (Num 31:8) [[Josephus 1930 | Josephus, Ant. 4.161]]. In his history Petra is the royal seat of the Nabataean king Aretas, where Hyrcanus II took refuge [[Josephus 1943 | Josephus, Ant. 14.16]]. The Roman general Scaurus found it too hard to reach [[Josephus 1943 | Josephus, Ant. 14.80]].",
+    josephus: "Josephus says Petra was once called Arce, and that Aaron died on a mountain beside it [[Josephus 1930 | Josephus, Ant. 4.82–83 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL490.43.xml]]. He calls it the chief city of Arabia, named Rekem after a Midianite king killed by Israel (Num 31:8) [[Josephus 1930 | Josephus, Ant. 4.161 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL490.79.xml]]. In his history Petra is the royal seat of the Nabataean king Aretas, where Hyrcanus II took refuge [[Josephus 1943 | Josephus, Ant. 14.16 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.11.xml]]. The Roman general Scaurus found it too hard to reach [[Josephus 1943 | Josephus, Ant. 14.80 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.43.xml]].",
     images: "My photographs show the Royal Tombs and the Siq, the narrow gorge into the city. The archive photograph, from about 1920 to 1933, shows a Bedul mother and child at their cave home. Most of the Bedul left the caves for Umm Saihun in 1985 [[Bienkowski 1989, p. 335]].",
     further: {
       ancient: [
@@ -1220,10 +1224,10 @@ const ACCESSED = "18 November 2026";   // date you last checked the online sourc
 const BIBLIO = [
   { key: "JPS 1985", type: "ancient", ref: "Jewish Publication Society (1985) Tanakh: The Holy Scriptures. Philadelphia: Jewish Publication Society. Available at: https://www.sefaria.org/texts (Accessed: " + ACCESSED + ").", link: "https://www.sefaria.org/texts" },
   { key: "NRSV 1995", type: "ancient", ref: "New Revised Standard Version Bible: Anglicised Edition (1995). Oxford: Oxford University Press. Available at: https://www.biblegateway.com (Accessed: " + ACCESSED + ").", link: "https://www.biblegateway.com/versions/New-Revised-Standard-Version-Anglicised-NRSVA-Bible/" },
-  { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
-  { key: "Josephus 1930", type: "ancient", ref: "Josephus (1930) Jewish Antiquities, Books 1-4. Translated by H. St J. Thackeray. Loeb Classical Library 242. Cambridge, MA: Harvard University Press.", link: "" },
-  { key: "Josephus 1943", type: "ancient", ref: "Josephus (1943) Jewish Antiquities, Books 12-14. Translated by R. Marcus. Loeb Classical Library 365. Cambridge, MA: Harvard University Press.", link: "" },
-  { key: "Josephus 1963", type: "ancient", ref: "Josephus (1963) Jewish Antiquities, Books 15-17. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 410. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Volume III: Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1930", type: "ancient", ref: "Josephus (1930) Jewish Antiquities, Volume II: Books 4-6. Translated by H. St J. Thackeray and R. Marcus. Loeb Classical Library 490. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1943", type: "ancient", ref: "Josephus (1943) Jewish Antiquities, Volume VI: Books 14-15. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 489. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1926", type: "ancient", ref: "Josephus (1926) The Life. Against Apion. Translated by H. St J. Thackeray. Loeb Classical Library 186. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Diodorus Siculus 1954", type: "ancient", ref: "Diodorus Siculus (1954) Library of History, Volume X: Books 19.66-20. Translated by R.M. Geer. Loeb Classical Library 390. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Strabo 1930", type: "ancient", ref: "Strabo (1930) Geography, Volume VII: Books 15-16. Translated by H.L. Jones. Loeb Classical Library 241. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Bienkowski 1989", type: "modern", ref: "Bienkowski, P. (1989) 'Architecture of the Petra Beduin: a preliminary report', Annual of the Department of Antiquities of Jordan, 33, pp. 335-343.", link: "" },
@@ -1338,13 +1342,16 @@ const BIBLIO = [
     if (r[1] === "heb") return "JPS 1985";
     if (r[1] === "nt") return "NRSV 1995";
     if (/^Josephus, J\.W\./.test(r[0])) return "Josephus 1928";
-    if (/^Josephus, Ant\./.test(r[0])) return "Josephus 1963";
+    const ant = r[0].match(/^Josephus, Ant\. (\d+)\./);
+    if (ant) { const b = +ant[1]; return b >= 4 && b <= 6 ? "Josephus 1930" : b >= 14 && b <= 15 ? "Josephus 1943" : null; }
+    if (/^Josephus, Life/.test(r[0])) return "Josephus 1926";
     return null;
   }
+  const INTRO = "Why Josephus? Josephus was born in Jerusalem around 37 CE, into a priestly family [[Josephus 1926 | Josephus, Life 5 | https://www.loebclassics.com/display/josephus-life/1926/pb_LCL186.5.xml]]. He commanded Jewish forces in Galilee during the revolt against Rome [[Josephus 1926 | Josephus, Life 28–29 | https://www.loebclassics.com/display/josephus-life/1926/pb_LCL186.13.xml]] and later watched the siege of Jerusalem from the Roman side [[Josephus 1928 | Josephus, J.W. 5.361 | https://www.loebclassics.com/display/josephus-jewish_war/1927/pb_LCL210.115.xml]]. His works record the cities, fortresses, roads and landscapes of the land as they stood two thousand years ago. Some he knew at first hand. Others he knew only from the Bible and older writers. This map follows his accounts place by place and sets them beside archive photographs and my own. It is an attempt to see the ancient land through the eyes of a man who lived its history.";
   const CITE_RE = /\[\[([^\]]+)\]\]/g;
   function splitCite(part) {
-    const bar = part.indexOf("|");
-    if (bar >= 0) return { key: part.slice(0, bar).trim(), rest: "", label: part.slice(bar + 1).trim() };
+    const bits = part.split("|");
+    if (bits.length > 1) return { key: bits[0].trim(), rest: "", label: bits[1].trim(), url: (bits[2] || "").trim() };
     const m = part.trim().match(/^(.*?\d{4}[a-z]?)(.*)$/);
     return m ? { key: m[1].trim(), rest: m[2] } : { key: part.trim(), rest: "" };
   }
@@ -1355,6 +1362,10 @@ const BIBLIO = [
       c.slice(2, -2).split(";").forEach(function (part) { use(splitCite(part).key, p.id); });
     });
     furtherItems(p).forEach(function (f) { if (f.key) use(f.key, p.id); });
+  });
+
+  (INTRO.match(CITE_RE) || []).forEach(function (c) {
+    c.slice(2, -2).split(";").forEach(function (part) { use(splitCite(part).key, "intro"); });
   });
 
   // All prose of a place, for collecting citations.
@@ -1383,12 +1394,16 @@ const BIBLIO = [
     return a;
   }
 
-  // Jakub's layout: introduction, Josephus, the photographs, Further reading.
-  function renderSections(p) {
+  // Jakub's layout: introduction and Josephus first, the photographs below, then Further reading.
+  function renderTop(p) {
     const box = el("div", { class: "sections" });
     if (p.intro) box.appendChild(renderNote(p.intro));
     if (p.josephus) { box.appendChild(el("h3", { text: "What Josephus says" })); box.appendChild(renderNote(p.josephus)); }
     if (p.images) { box.appendChild(el("h3", { text: "The photographs" })); box.appendChild(renderNote(p.images)); }
+    return box;
+  }
+  function renderFurther(p) {
+    const box = el("div", { class: "sections" });
     const f = p.further || {};
     if ((f.ancient && f.ancient.length) || (f.modern && f.modern.length)) {
       box.appendChild(el("h3", { text: "Further reading" }));
@@ -1399,6 +1414,7 @@ const BIBLIO = [
         g[1].forEach(function (item) {
           const li = renderNote(item.desc || "", "li");
           li.insertBefore(document.createTextNode(item.desc ? ": " : ""), li.firstChild);
+          if (item.url) li.insertBefore(extLink(item.url), li.firstChild);
           li.insertBefore(citeLink(item.key, item.head || item.key), li.firstChild);
           ul.appendChild(li);
         });
@@ -1406,6 +1422,15 @@ const BIBLIO = [
       });
     }
     return box;
+  }
+
+  // Arrow to the passage in the digital Loeb (or another outside source).
+  function extLink(url) {
+    return el("span", { class: "ext" }, [
+      document.createTextNode(" ("),
+      el("a", { class: "ext-link", href: url, target: "_blank", rel: "noopener", title: "Open the passage in a new tab", text: "\u2192" }),
+      document.createTextNode(")")
+    ]);
   }
 
   function renderNote(text, tag) {
@@ -1422,6 +1447,7 @@ const BIBLIO = [
           const a = el("a", { class: "cite-link", href: "#" + bibId(c.key), text: c.label || (c.key + c.rest) });
           a.onclick = function (e) { e.preventDefault(); goToBib(c.key); };
           pEl.appendChild(a);
+          if (c.url) pEl.appendChild(extLink(c.url));
         } else {
           pEl.appendChild(el("span", { class: "cite-missing", title: "No bibliography entry with the key \"" + c.key + "\"", text: (c.label || (c.key + c.rest)) + " [not in bibliography]" }));
         }
@@ -1432,6 +1458,8 @@ const BIBLIO = [
     pEl.appendChild(document.createTextNode(text.slice(last)));
     return pEl;
   }
+
+  (function () { const box = document.getElementById("intro"); if (box) box.appendChild(renderNote(INTRO)); })();
 
   // ---------- Map ----------
   const map = L.map("map", { zoomControl: true, scrollWheelZoom: true });
@@ -1565,6 +1593,7 @@ const BIBLIO = [
       el("p", { class: "region", text: p.region }),
       el("h2", { text: p.name }),
       renderTexts(p.texts),
+      p.intro ? renderTop(p) : renderNote(p.note || ""),
       el("div", { class: "pair" }, [thenFig, nowFig]),
       (mine.more && mine.more.length) ? el("div", { class: "more" }, mine.more.map(function (m) {
         const img = el("img", { src: "images/mine/" + m.file, alt: m.caption, loading: "lazy" });
@@ -1572,7 +1601,7 @@ const BIBLIO = [
         img.onerror = function () { img.parentNode.remove(); };
         return el("figure", null, [img, el("figcaption", { text: m.caption + " © C. M. Milea" })]);
       })) : null,
-      p.intro ? renderSections(p) : renderNote(p.note || "")
+      p.intro ? renderFurther(p) : null
     ]);
 
     if (detailEl) detailEl.remove();
@@ -1614,8 +1643,8 @@ const BIBLIO = [
     const cited = el("span", { class: "cited-at", text: places.length ? "Cited at: " : "Not yet cited on the site" });
     places.forEach(function (pid) {
       const p = PLACES.find(x => x.id === pid);
-      const a = el("a", { href: "#" + pid, text: p.name });
-      a.onclick = function (e) { e.preventDefault(); show(pid); document.querySelector(".layout").scrollIntoView({ behavior: "smooth" }); };
+      const a = el("a", { href: "#" + pid, text: p ? p.name : "Why Josephus?" });
+      a.onclick = function (e) { e.preventDefault(); if (p) show(pid); else if (typeof closeDetail === "function") closeDetail(); document.querySelector(".layout").scrollIntoView({ behavior: "smooth" }); };
       cited.appendChild(a);
     });
     li.appendChild(cited);

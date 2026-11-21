@@ -84,6 +84,7 @@ further: {
 },
 ```
 
+To add an arrow to the digital Loeb, put the page URL after a second bar: [[Josephus 1963 | Josephus, Ant. 15.390 | https://www.loebclassics.com/...]]. Further reading items take a `url` field.
 `key` must match a BIBLIO entry. `head` becomes the link text.
 Loeb Josephus volumes: 1930 = Ant. 1-4 (LCL 242); 1943 = Ant. 12-14 (LCL 365); 1963 = Ant. 15-17 (LCL 410); 1928 = J.W. 5-7 (LCL 210).
 Others you may need: Ant. 5-8 (LCL 281, 1934), J.W. 1-2 (LCL 203, 1927), J.W. 3-4 (LCL 487, 1927), Life (LCL 186, 1926). Check the year on the title page.
