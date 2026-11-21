@@ -833,6 +833,10 @@ figcaption { margin-top: 0.4rem; font-size: 0.8rem; color: var(--muted); }
 .cite { font-size: 0.75rem; }
 
 .note { font-size: 1rem; }
+.sections h3 { font-size: 1.05rem; margin: 1.2em 0 0.3em; }
+.sections h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 0.9em 0 0.3em; }
+.sections ul.further { padding-left: 1.1em; margin: 0; }
+.sections ul.further li { margin-bottom: 0.5em; font-size: 0.95rem; }
 .more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin: 0 0 1rem; }
 .more figure { margin: 0; }
 .more img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border: 1px solid var(--line); cursor: zoom-in; }
@@ -1160,8 +1164,21 @@ const PLACES = [
     name: "Petra",
     region: "Transjordan",
     lat: 30.3285, lng: 35.4444,
-    texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Obad 1–4", "heb", "Obadiah.1.1-4"], ["2 Macc 5:8", "nt", "2 Maccabees 5:8"]],
-    note: "Petra lies in the territory of ancient Edom, Israel's 'brother' nation descended from Esau [[Tholbecq 2025, p. 816]]. Edom refused Israel passage on the way from Egypt, and Obadiah condemns Edom's pride in its homes among the clefts of the rock. The Greek word petra simply means rock. Diodorus Siculus describes a place called the Rock in connection with the Nabataeans. He recounts how Antigonus I Monophthalmus tried to subdue them in 312 to 311 BCE with two expeditions, the second led by his son Demetrius. The Nabataeans took refuge on a natural fortress, the Rock, reached by a single difficult approach [[Diodorus Siculus 1954 | Diodorus Siculus, Bib. hist. 19.97.1]]. On leaving it, Demetrius marched three hundred stades, about 58 km, and camped near the Dead Sea [[Diodorus Siculus 1954 | Diodorus Siculus, Bib. hist. 19.98.1]]. Petra lies about 104 km from the Dead Sea, so the Rock may instead be Es-Sela, another Edomite stronghold whose name also means rock [[Wheatley 2020, p. 160 n. 26; Tholbecq 2025, p. 814]]. By 168 BCE Petra was the seat of Nabataean power (2 Macc 5:8), and in 129 BCE an inscription from Priene records an embassy to a king in Petra [[Tholbecq 2025, p. 817]]. Strabo calls Petra the metropolis of the Nabataeans [[Strabo 1930 | Strabo, Geogr. 16.4.21]]. Their kingdom lasted until Rome annexed it in 106 CE [[Tholbecq 2025, p. 813]]. The archive photograph shows a Bedul mother and child at their cave home. The Bedul lived in Petra's Nabataean caves for about 150 years. In 1985 most of the tribe was moved to the new village of Umm Saihun, as Petra was reorganised for tourism [[Bienkowski 1989, p. 335]].",
+    texts: [["Gen 36", "heb", "Genesis.36"], ["Num 20:14–21", "heb", "Numbers.20.14-21"], ["Num 31:8", "heb", "Numbers.31.8"], ["Obad 1–4", "heb", "Obadiah.1.1-4"], ["2 Macc 5:8", "nt", "2 Maccabees 5:8"]],
+    intro: "Petra, in the territory of ancient Edom, was the Nabataean capital until Rome annexed it in 106 CE [[Tholbecq 2025, pp. 813, 816]].",
+    josephus: "Josephus says Petra was once called Arce, and that Aaron died on a mountain beside it [[Josephus 1930 | Josephus, Ant. 4.82–83]]. He calls it the chief city of Arabia, named Rekem after a Midianite king killed by Israel (Num 31:8) [[Josephus 1930 | Josephus, Ant. 4.161]]. In his history Petra is the royal seat of the Nabataean king Aretas, where Hyrcanus II took refuge [[Josephus 1943 | Josephus, Ant. 14.16]]. The Roman general Scaurus found it too hard to reach [[Josephus 1943 | Josephus, Ant. 14.80]].",
+    images: "My photographs show the Royal Tombs and the Siq, the narrow gorge into the city. The archive photograph, from about 1920 to 1933, shows a Bedul mother and child at their cave home. Most of the Bedul left the caves for Umm Saihun in 1985 [[Bienkowski 1989, p. 335]].",
+    further: {
+      ancient: [
+        { key: "Diodorus Siculus 1954", head: "Diodorus Siculus (1st century BCE), Greek historian, Library of History (Bib. hist.) 19.94–100", desc: "the Nabataeans and the attacks of Antigonus I on 'the Rock'." },
+        { key: "Strabo 1930", head: "Strabo (about 64 BCE to about 24 CE), Greek geographer, Geography (Geogr.) 16.4.21–26", desc: "Petra as the Nabataean metropolis." }
+      ],
+      modern: [
+        { key: "Tholbecq 2025", head: "Tholbecq (2025)", desc: "Petra from the Nabataean kings to the Byzantine city." },
+        { key: "Wheatley 2020", head: "Wheatley (2020)", desc: "argues that Diodorus's 'Rock' may be Es-Sela, not Petra." },
+        { key: "Bienkowski 1989", head: "Bienkowski (1989)", desc: "the Bedul cave homes and their move to Umm Saihun." }
+      ]
+    },
     mine: { file: "petra.jpg", caption: "The Royal Tombs, Petra, 2018.",
       more: [
         { file: "petra-siq.jpg", caption: "The Siq, the narrow gorge into Petra, 2018." },
@@ -1204,6 +1221,8 @@ const BIBLIO = [
   { key: "JPS 1985", type: "ancient", ref: "Jewish Publication Society (1985) Tanakh: The Holy Scriptures. Philadelphia: Jewish Publication Society. Available at: https://www.sefaria.org/texts (Accessed: " + ACCESSED + ").", link: "https://www.sefaria.org/texts" },
   { key: "NRSV 1995", type: "ancient", ref: "New Revised Standard Version Bible: Anglicised Edition (1995). Oxford: Oxford University Press. Available at: https://www.biblegateway.com (Accessed: " + ACCESSED + ").", link: "https://www.biblegateway.com/versions/New-Revised-Standard-Version-Anglicised-NRSVA-Bible/" },
   { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1930", type: "ancient", ref: "Josephus (1930) Jewish Antiquities, Books 1-4. Translated by H. St J. Thackeray. Loeb Classical Library 242. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1943", type: "ancient", ref: "Josephus (1943) Jewish Antiquities, Books 12-14. Translated by R. Marcus. Loeb Classical Library 365. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1963", type: "ancient", ref: "Josephus (1963) Jewish Antiquities, Books 15-17. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 410. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Diodorus Siculus 1954", type: "ancient", ref: "Diodorus Siculus (1954) Library of History, Volume X: Books 19.66-20. Translated by R.M. Geer. Loeb Classical Library 390. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Strabo 1930", type: "ancient", ref: "Strabo (1930) Geography, Volume VII: Books 15-16. Translated by H.L. Jones. Loeb Classical Library 241. Cambridge, MA: Harvard University Press.", link: "" },
@@ -1332,10 +1351,21 @@ const BIBLIO = [
   PLACES.forEach(function (p) {
     if (Array.isArray(p.texts)) p.texts.forEach(function (r) { const k = textKey(r); if (k) use(k, p.id); });
     if (p.archive && p.archive.matpc) use("LC matpc-" + p.archive.matpc, p.id);
-    (p.note.match(CITE_RE) || []).forEach(function (c) {
+    (placeProse(p).match(CITE_RE) || []).forEach(function (c) {
       c.slice(2, -2).split(";").forEach(function (part) { use(splitCite(part).key, p.id); });
     });
+    furtherItems(p).forEach(function (f) { if (f.key) use(f.key, p.id); });
   });
+
+  // All prose of a place, for collecting citations.
+  function furtherItems(p) {
+    const f = p.further || {};
+    return (f.ancient || []).concat(f.modern || []);
+  }
+  function placeProse(p) {
+    return [p.note, p.intro, p.josephus, p.images].concat(furtherItems(p).map(function (f) { return f.desc; }))
+      .filter(Boolean).join(" ");
+  }
 
   function goToBib(key) {
     const li = document.getElementById(bibId(key));
@@ -1346,8 +1376,40 @@ const BIBLIO = [
     setTimeout(function () { li.classList.remove("flash"); }, 1800);
   }
 
-  function renderNote(text) {
-    const pEl = el("p", { class: "note" });
+  function citeLink(key, label) {
+    if (!BIB[key]) return el("span", { class: "cite-missing", title: "No bibliography entry with the key \"" + key + "\"", text: label + " [not in bibliography]" });
+    const a = el("a", { class: "cite-link", href: "#" + bibId(key), text: label });
+    a.onclick = function (e) { e.preventDefault(); goToBib(key); };
+    return a;
+  }
+
+  // Jakub's layout: introduction, Josephus, the photographs, Further reading.
+  function renderSections(p) {
+    const box = el("div", { class: "sections" });
+    if (p.intro) box.appendChild(renderNote(p.intro));
+    if (p.josephus) { box.appendChild(el("h3", { text: "What Josephus says" })); box.appendChild(renderNote(p.josephus)); }
+    if (p.images) { box.appendChild(el("h3", { text: "The photographs" })); box.appendChild(renderNote(p.images)); }
+    const f = p.further || {};
+    if ((f.ancient && f.ancient.length) || (f.modern && f.modern.length)) {
+      box.appendChild(el("h3", { text: "Further reading" }));
+      [["Ancient sources", f.ancient], ["Secondary literature", f.modern]].forEach(function (g) {
+        if (!g[1] || !g[1].length) return;
+        box.appendChild(el("h4", { text: g[0] }));
+        const ul = el("ul", { class: "further" });
+        g[1].forEach(function (item) {
+          const li = renderNote(item.desc || "", "li");
+          li.insertBefore(document.createTextNode(item.desc ? ": " : ""), li.firstChild);
+          li.insertBefore(citeLink(item.key, item.head || item.key), li.firstChild);
+          ul.appendChild(li);
+        });
+        box.appendChild(ul);
+      });
+    }
+    return box;
+  }
+
+  function renderNote(text, tag) {
+    const pEl = el(tag || "p", { class: "note" });
     let last = 0, m;
     CITE_RE.lastIndex = 0;
     while ((m = CITE_RE.exec(text))) {
@@ -1510,7 +1572,7 @@ const BIBLIO = [
         img.onerror = function () { img.parentNode.remove(); };
         return el("figure", null, [img, el("figcaption", { text: m.caption + " © C. M. Milea" })]);
       })) : null,
-      renderNote(p.note)
+      p.intro ? renderSections(p) : renderNote(p.note || "")
     ]);
 
     if (detailEl) detailEl.remove();

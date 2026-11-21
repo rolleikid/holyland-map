@@ -69,3 +69,21 @@ Map: Leaflet (BSD licence, included inside index.html). Base maps by Esri, no AP
 3. The site shows the citation as a link to the entry. A citation whose key has no entry shows in red with "[not in bibliography]". Fix those before you submit.
 4. Bible and Josephus references on the texts line count as citations of the JPS, NRSV and Loeb entries automatically. Archive photographs are added to the bibliography automatically.
 5. Set `ACCESSED` at the top of the block to the date you last checked the online sources.
+
+## Sectioned entries (Jakub's layout)
+
+A pin with an `intro` field shows four sections. Pins without it still show the old `note`.
+
+```
+intro:    "One sentence.",
+josephus: "What Josephus says, with [[Josephus 1930 | Josephus, Ant. 4.161]].",
+images:   "A sentence or two on your photo and the archive photo.",
+further: {
+  ancient: [ { key: "Strabo 1930", head: "Strabo (dates), Greek geographer, Geography (Geogr.) 16.4.21", desc: "what the reader finds." } ],
+  modern:  [ { key: "Tholbecq 2025", head: "Tholbecq (2025)", desc: "what the reader finds." } ]
+},
+```
+
+`key` must match a BIBLIO entry. `head` becomes the link text.
+Loeb Josephus volumes: 1930 = Ant. 1-4 (LCL 242); 1943 = Ant. 12-14 (LCL 365); 1963 = Ant. 15-17 (LCL 410); 1928 = J.W. 5-7 (LCL 210).
+Others you may need: Ant. 5-8 (LCL 281, 1934), J.W. 1-2 (LCL 203, 1927), J.W. 3-4 (LCL 487, 1927), Life (LCL 186, 1926). Check the year on the title page.
