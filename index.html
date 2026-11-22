@@ -986,7 +986,7 @@ const PLACES = [
         { key: "Josephus 1928", head: "Josephus (37 to about 100 CE), Jewish historian, Jewish War (J.W.) 5.184–226", desc: "his fullest description of the Temple and its courts, written soon after its destruction." }
       ],
       modern: [
-        { key: "Goodman 2020", head: "Goodman (2020)", url: "https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf", desc: "argues that Rome backed Herod's rebuilding, and that his claim to have paid for it himself hides Roman support." },
+        { key: "Goodman 2020", head: "Goodman (2020)", desc: "argues that Rome backed Herod's rebuilding, and that his claim to have paid for it himself hides Roman support." },
         { key: "Schiffman 2008", head: "Schiffman (2008)", desc: "compares Josephus's descriptions of the Temple with the Mishnah and the Temple Scroll. His enclosure fits neither the Mishnah nor today's Temple Mount." }
       ]
     },
@@ -1229,6 +1229,7 @@ const PLACES = [
   Example of a modern entry (copy, fill in, remove the // marks):
   // { key: "Magness 2019", type: "modern", ref: "Magness, J. (2019) Masada: From Jewish Revolt to Modern Myth. Princeton: Princeton University Press.", link: "" },
 */
+const SHOW_ARROWS = true;   // false hides the arrows to the digital Loeb
 const ACCESSED = "22 November 2026";   // date you last checked the online sources
 const BIBLIO = [
   { key: "JPS 1985", type: "ancient", ref: "Jewish Publication Society (1985) Tanakh: The Holy Scriptures. Philadelphia: Jewish Publication Society. Available at: https://www.sefaria.org/texts (Accessed: " + ACCESSED + ").", link: "https://www.sefaria.org/texts" },
@@ -1438,6 +1439,7 @@ const BIBLIO = [
 
   // Arrow to the passage in the digital Loeb (or another outside source).
   function extLink(url) {
+    if (!SHOW_ARROWS) return document.createTextNode("");
     return el("span", { class: "ext" }, [
       document.createTextNode(" ("),
       el("a", { class: "ext-link", href: url, target: "_blank", rel: "noopener", title: "Open the passage in a new tab", text: "\u2192" }),
@@ -1645,7 +1647,8 @@ const BIBLIO = [
   // ---------- Bibliography ----------
   const bibList = document.getElementById("bibliography");
   const KINDS = { ancient: "Ancient source", modern: "Modern scholarship", archive: "Archive photograph" };
-  const entries = Object.keys(BIB).map(k => BIB[k]).sort(function (x, y) { return x.ref.localeCompare(y.ref); });
+  const ORDER = { ancient: 0, modern: 1, archive: 2 };
+  const entries = Object.keys(BIB).map(k => BIB[k]).sort(function (x, y) { return (ORDER[x.type] - ORDER[y.type]) || x.ref.localeCompare(y.ref); });
   entries.forEach(function (b) {
     const li = el("li", { id: bibId(b.key), "data-type": b.type });
     li.appendChild(el("span", { class: "kind", text: KINDS[b.type] || b.type }));
