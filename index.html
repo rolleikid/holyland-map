@@ -979,8 +979,17 @@ const PLACES = [
     lat: 31.7767, lng: 35.2345,
     texts: [["Ps 137:5–6", "heb", "Psalms.137.5-6"], ["1 Kgs 8", "heb", "I_Kings.8"], ["Mark 13:1–2", "nt", "Mark 13:1-2"]],
     intro: "The Western Wall is part of the retaining wall Herod built around the enlarged platform of the Second Temple.",
-    josephus: "In the eighteenth year of his reign, Herod resolved to rebuild the Temple and enlarge its precincts [[Josephus 1943 | Josephus, Ant. 15.380 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.441.xml]]. He gathered a thousand wagons for the stones and ten thousand skilled workmen. He bought robes for a thousand priests and trained some as masons and others as carpenters [[Josephus 1943 | Josephus, Ant. 15.390 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.445.xml]].",
+    josephus: "In the eighteenth year of his reign, Herod resolved to rebuild the Temple and enlarge its precincts [[Josephus 1943 | Josephus, Ant. 15.380 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.441.xml]]. The Jewish War gives the fifteenth year instead [[Josephus 1927 | Josephus, J.W. 1.401]]. Goodman suggests that the first three years went on survey and preparation [[Goodman 2020, p. 18*]]. Herod told the people that the Temple built after the exile stood sixty cubits lower than Solomon's, and promised to restore it [[Josephus 1943 | Josephus, Ant. 15.385 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.443.xml]]. He gathered a thousand wagons for the stones and ten thousand skilled workmen. He bought robes for a thousand priests and trained some as masons and others as carpenters [[Josephus 1943 | Josephus, Ant. 15.390 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL489.445.xml]].",
     images: "My photographs show worshippers at the wall in 2016. The archive photograph, from between 1900 and 1920, shows the same stones when the site was a narrow alley known as the Jews' wailing place.",
+    further: {
+      ancient: [
+        { key: "Josephus 1928", head: "Josephus (37 to about 100 CE), Jewish historian, Jewish War (J.W.) 5.184–226", desc: "his fullest description of the Temple and its courts, written soon after its destruction." }
+      ],
+      modern: [
+        { key: "Goodman 2020", head: "Goodman (2020)", url: "https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf", desc: "argues that Rome backed Herod's rebuilding, and that his claim to have paid for it himself hides Roman support." },
+        { key: "Schiffman 2008", head: "Schiffman (2008)", desc: "compares Josephus's descriptions of the Temple with the Mishnah and the Temple Scroll. His enclosure fits neither the Mishnah nor today's Temple Mount." }
+      ]
+    },
     mine: { file: "western-wall-standing.jpg", caption: "A worshipper at the Western Wall, with prayer notes in the crack beside him, March 2016.",
       more: [
         { file: "western-wall-seated.jpg", caption: "A worshipper seated in prayer at the wall, March 2016." },
@@ -1220,10 +1229,11 @@ const PLACES = [
   Example of a modern entry (copy, fill in, remove the // marks):
   // { key: "Magness 2019", type: "modern", ref: "Magness, J. (2019) Masada: From Jewish Revolt to Modern Myth. Princeton: Princeton University Press.", link: "" },
 */
-const ACCESSED = "18 November 2026";   // date you last checked the online sources
+const ACCESSED = "22 November 2026";   // date you last checked the online sources
 const BIBLIO = [
   { key: "JPS 1985", type: "ancient", ref: "Jewish Publication Society (1985) Tanakh: The Holy Scriptures. Philadelphia: Jewish Publication Society. Available at: https://www.sefaria.org/texts (Accessed: " + ACCESSED + ").", link: "https://www.sefaria.org/texts" },
   { key: "NRSV 1995", type: "ancient", ref: "New Revised Standard Version Bible: Anglicised Edition (1995). Oxford: Oxford University Press. Available at: https://www.biblegateway.com (Accessed: " + ACCESSED + ").", link: "https://www.biblegateway.com/versions/New-Revised-Standard-Version-Anglicised-NRSVA-Bible/" },
+  { key: "Josephus 1927", type: "ancient", ref: "Josephus (1927) The Jewish War, Volume I: Books 1-2. Translated by H. St J. Thackeray. Loeb Classical Library 203. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Volume III: Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1930", type: "ancient", ref: "Josephus (1930) Jewish Antiquities, Volume II: Books 4-6. Translated by H. St J. Thackeray and R. Marcus. Loeb Classical Library 490. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1943", type: "ancient", ref: "Josephus (1943) Jewish Antiquities, Volume VI: Books 14-15. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 489. Cambridge, MA: Harvard University Press.", link: "" },
@@ -1231,6 +1241,8 @@ const BIBLIO = [
   { key: "Diodorus Siculus 1954", type: "ancient", ref: "Diodorus Siculus (1954) Library of History, Volume X: Books 19.66-20. Translated by R.M. Geer. Loeb Classical Library 390. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Strabo 1930", type: "ancient", ref: "Strabo (1930) Geography, Volume VII: Books 15-16. Translated by H.L. Jones. Loeb Classical Library 241. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Bienkowski 1989", type: "modern", ref: "Bienkowski, P. (1989) 'Architecture of the Petra Beduin: a preliminary report', Annual of the Department of Antiquities of Jordan, 33, pp. 335-343.", link: "" },
+  { key: "Goodman 2020", type: "modern", ref: "Goodman, M. (2020) 'Herod’s Temple and the Roman Revolution', in Meiron, E. (ed.) City of David Studies of Ancient Jerusalem: The 21st Annual Conference. Jerusalem: Megalim, pp. 18*-31*. Available at: https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf (Accessed: " + ACCESSED + ").", link: "https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf" },
+  { key: "Schiffman 2008", type: "modern", ref: "Schiffman, L.H. (2008) 'Descriptions of the Jerusalem Temple in Josephus and the Temple Scroll', in Schiffman, L.H. The Courtyards of the House of the Lord: Studies on the Temple Scroll. Leiden: Brill, pp. 175-188. Available at: ProQuest Ebook Central (Accessed: " + ACCESSED + ").", link: "" },
   { key: "Wheatley 2020", type: "modern", ref: "Wheatley, P. (2020) 'The implications of \u2018Poliorcetes\u2019: was Demetrius the Besieger\u2019s nickname ironic?', Histos, 14, pp. 152-184.", link: "" },
   { key: "Tholbecq 2025", type: "modern", ref: "Tholbecq, L. (2025) 'Petra during the Nabataean, Roman, and Byzantine Periods', in Raja, R. (ed.) The Oxford Handbook of the Hellenistic and Roman Near East. Oxford: Oxford University Press, pp. 813-828. Available at: https://doi.org/10.1093/oxfordhb/9780190858155.013.53 (Accessed: " + ACCESSED + ").", link: "https://doi.org/10.1093/oxfordhb/9780190858155.013.53" }
 ];
