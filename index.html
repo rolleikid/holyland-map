@@ -1003,9 +1003,11 @@ const PLACES = [
     name: "Prayer on the Mount of Olives",
     region: "Jerusalem",
     lat: 31.7780, lng: 35.2410,
-    texts: [["2 Sam 15:30", "heb", "II_Samuel.15.30"], ["Zech 14:4", "heb", "Zechariah.14.4"], ["Dan 12:2", "heb", "Daniel.12.2"]],
-    note: "The Jewish cemetery on the Mount of Olives has received burials for close to three thousand years. David climbed this slope weeping, barefoot and with his head covered, as he fled from Absalom. Zechariah places the feet of the Lord on this mountain on the day of judgement. Jewish tradition holds that the resurrection of the dead begins here. The small stones on the graves follow the Jewish custom of marking a visit. The archive portrait shows Jerusalem's Jewish community a century earlier.",
-    mine: { file: "mount-of-olives-prayer.jpg", caption: "Reading and prayer among the graves, Mount of Olives, March 2016." },
+    texts: [["2 Sam 15:30", "heb", "II_Samuel.15.30"], ["Zech 14:4", "heb", "Zechariah.14.4"], ["Dan 12:2", "heb", "Daniel.12.2"], ["Acts 1:12", "nt", "Acts 1:12"], ["Acts 21:38", "nt", "Acts 21:38"]],
+    intro: "The Mount of Olives rises east of Jerusalem, across the Kidron Valley.",
+    josephus: "Josephus retells David's flight from Absalom. David climbs the Mount of Olives barefoot and in tears. Unlike 2 Sam 15:30, Josephus says nothing of covered heads. At the summit he adds what Samuel does not: David looks back at the city and weeps, as one who has already lost his kingdom [[Josephus 1934 | Josephus, Ant. 7.202–203 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL281.111.xml]]. Josephus also mentions the Mount of Olives \"five stades\" from Jerusalem as the gathering place of an Egyptian false prophet who, during the Roman governorship of Felix, led his followers to its summit, promising that the walls of Jerusalem would collapse at his command, opening the way for them to enter the city. His rebellion was crushed by Roman troops, although the prophet himself escaped [[Josephus 1965 | Josephus, Ant. 20.169–172 | https://www.loebclassics.com/display/josephus-jewish_antiquities/1930/pb_LCL456.93.xml]]. The Jewish War tells it differently: thirty thousand followers march from the wilderness to seize the city by force, with no promise of falling walls [[Josephus 1927 | Josephus, J.W. 2.261–263 | https://www.loebclassics.com/display/josephus-jewish_war/1927/pb_LCL203.425.xml]]. In 70 CE the Tenth Legion camped on the Mount, six stades from the city [[Josephus 1928 | Josephus, J.W. 5.70 | https://www.loebclassics.com/display/josephus-jewish_war/1927/pb_LCL210.23.xml]].",
+    images: "Josephus never mentions the Jewish cemetery that now covers the western slope. My photographs show the graves and a man reading among them in 2016. The archive photograph, from between 1898 and 1914, shows members of Jerusalem's Jewish community.",
+    mine: { file: "mount-of-olives-cemetery.jpg", caption: "The Jewish cemetery on the Mount of Olives, 2016.", more: [ { file: "mount-of-olives-prayer.jpg", caption: "Reading and prayer among the graves, Mount of Olives, March 2016." } ] },
     archive: { matpc: "06793", title: "Costumes and characters, etc. Jews of Jerusalem", date: "between 1898 and 1914", search: "Jews Jerusalem" }
   },
   {
@@ -1237,9 +1239,11 @@ const BIBLIO = [
   { key: "Josephus 1927", type: "ancient", ref: "Josephus (1927) The Jewish War, Volume I: Books 1-2. Translated by H. St J. Thackeray. Loeb Classical Library 203. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1928", type: "ancient", ref: "Josephus (1928) The Jewish War, Volume III: Books 5-7. Translated by H. St J. Thackeray. Loeb Classical Library 210. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1930", type: "ancient", ref: "Josephus (1930) Jewish Antiquities, Volume II: Books 4-6. Translated by H. St J. Thackeray and R. Marcus. Loeb Classical Library 490. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1934", type: "ancient", ref: "Josephus (1934) Jewish Antiquities, Volume III: Books 7-8. Translated by R. Marcus. Loeb Classical Library 281. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1943", type: "ancient", ref: "Josephus (1943) Jewish Antiquities, Volume VI: Books 14-15. Translated by R. Marcus and A. Wikgren. Loeb Classical Library 489. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Josephus 1926", type: "ancient", ref: "Josephus (1926) The Life. Against Apion. Translated by H. St J. Thackeray. Loeb Classical Library 186. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Diodorus Siculus 1954", type: "ancient", ref: "Diodorus Siculus (1954) Library of History, Volume X: Books 19.66-20. Translated by R.M. Geer. Loeb Classical Library 390. Cambridge, MA: Harvard University Press.", link: "" },
+  { key: "Josephus 1965", type: "ancient", ref: "Josephus (1965) Jewish Antiquities, Volume IX: Book 20. Translated by L.H. Feldman. Loeb Classical Library 456. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Strabo 1930", type: "ancient", ref: "Strabo (1930) Geography, Volume VII: Books 15-16. Translated by H.L. Jones. Loeb Classical Library 241. Cambridge, MA: Harvard University Press.", link: "" },
   { key: "Bienkowski 1989", type: "modern", ref: "Bienkowski, P. (1989) 'Architecture of the Petra Beduin: a preliminary report', Annual of the Department of Antiquities of Jordan, 33, pp. 335-343.", link: "" },
   { key: "Goodman 2020", type: "modern", ref: "Goodman, M. (2020) 'Herod’s Temple and the Roman Revolution', in Meiron, E. (ed.) City of David Studies of Ancient Jerusalem: The 21st Annual Conference. Jerusalem: Megalim, pp. 18*-31*. Available at: https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf (Accessed: " + ACCESSED + ").", link: "https://cityofdavid.org.il/wp-content/uploads/2025/12/sefer_keness_21_EN_Goodman.pdf" },
@@ -1356,7 +1360,7 @@ const BIBLIO = [
     if (r[1] === "nt") return "NRSV 1995";
     if (/^Josephus, J\.W\./.test(r[0])) return "Josephus 1928";
     const ant = r[0].match(/^Josephus, Ant\. (\d+)\./);
-    if (ant) { const b = +ant[1]; return b >= 4 && b <= 6 ? "Josephus 1930" : b >= 14 && b <= 15 ? "Josephus 1943" : null; }
+    if (ant) { const b = +ant[1]; return b >= 4 && b <= 6 ? "Josephus 1930" : b >= 7 && b <= 8 ? "Josephus 1934" : b >= 14 && b <= 15 ? "Josephus 1943" : b === 20 ? "Josephus 1965" : null; }
     if (/^Josephus, Life/.test(r[0])) return "Josephus 1926";
     return null;
   }
